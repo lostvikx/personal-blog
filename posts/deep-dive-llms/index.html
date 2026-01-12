@@ -7,16 +7,15 @@
     <title>Deep Dive Into LLMs - Vikram&apos;s Blog</title>
     <meta name="author" content="Vikram S. Negi">
     <meta name="description" content="A deep dive into understanding how LLMs work.">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
+    <link rel="stylesheet" href="/personal-blog/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
 </head>
 
 <body>
     <nav>
         <ul>
-            <li>[ <a href="/">Posts</a> ]</li>
-            <li>[ <a href="/about">About</a> ]</li>
+            <li>[ <a href="/personal-blog/">Posts</a> ]</li>
+            <li>[ <a href="/personal-blog/about">About</a> ]</li>
             <li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>
         </ul>
     </nav>
@@ -26,7 +25,7 @@
             <h1>Deep Dive Into LLMs</h1>
             <p><em>By Vikram S. Negi on May 02, 2025</em></p>
             <figure class="thumbnail-img">
-                <img src="/assets/thumbnails/5afc6062d4a42efe.webp" alt="Blog post thumbnail.">
+                <img src="/personal-blog/assets/thumbnails/5afc6062d4a42efe.webp" alt="Blog post thumbnail.">
             </figure>
             <hr>
             <div class="content"><p>The following is a summary of the things I learned in a course created by Andrej Karpathy on <a href="https://youtu.be/7xTGNNLPyMI">YouTube</a>. This is by far the most detailed yet easy to follow teachings of how Large Language Models (LLMs) work.</p>
@@ -38,7 +37,7 @@
 <li>High quality - reputable sources.</li>
 <li>High diversity - larger knowledge base for model.</li>
 </ul>
-<p><img src="/assets/deep-dive-llms/fineweb.png" alt="FineWeb Pipeline: Getting the text data for LLMs."></p>
+<p><img src="/personal-blog/assets/deep-dive-llms/fineweb.png" alt="FineWeb Pipeline: Getting the text data for LLMs."></p>
 <p>To find more information about pre-training, please check out the FineWeb <a href="https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1">documentation</a>.</p>
 <p>Neural Nets expect a one-dimensional sequence of symbols and a finite set of symbols (tokens). The set of symbols represent the possible outputs for the model.</p>
 <h2>Tokenization</h2>
@@ -52,7 +51,7 @@
 <li>Use byte-pair encoding algorithm (each pair becomes a new token)</li>
 <li>The previous step can be repeated (this gives us a shorter sequence of string with a larger vocabulary)</li>
 </ol>
-<p><img src="/assets/deep-dive-llms/tiktokenizer_example.png" alt="Example of tokenization."></p>
+<p><img src="/personal-blog/assets/deep-dive-llms/tiktokenizer_example.png" alt="Example of tokenization."></p>
 <blockquote>
 <p>Note: Current LLMs typically use vocabulary of ~100,000 tokens.</p>
 </blockquote>
@@ -60,7 +59,7 @@
 <p>Training a neural network takes the most amount of compute resources. Also, the max input dimensions (tokens) of the network is decided arbitrarily, eg. 8,000 token (context) window. The input to the neural net is called the context. In simple words we are solving a multi-class classification problem with the labels being the token vocabulary.</p>
 <p>The input to the network can be of variable length from 0 to max context window. And the output of the network is a probabilistic distribution of the tokens.</p>
 <p>Training a neural network means to update the probability distribution to conform to the training data. In every iteration of training, we update the probabilities of the distribution of the possible tokens (~100,000 tokens). We are trying to nudge the model to guess the next output token.</p>
-<p><img src="/assets/deep-dive-llms/llm_io.png" alt="Diagram of a neural network I/O."></p>
+<p><img src="/personal-blog/assets/deep-dive-llms/llm_io.png" alt="Diagram of a neural network I/O."></p>
 <h2>Neural Network Internals</h2>
 <p>A neural net may have billions of parameters, called as weights and biases. These values are tuned or adjusted during the training phase of the model. If the prediction is incorrect the weights are adjusted.</p>
 <p>A model is nothing but a mathematical function parameterized by the weights of the model and takes an input of a fixed size. Note that each token has a vector representation also called as an embedding. This vector is of a fixed dimension.</p>
@@ -68,7 +67,7 @@
 <h2>Inference</h2>
 <p>Given some input tokens, the model samples a token from the output probability distirbution. The tokens with higher probability have a higher chance of being sampled.</p>
 <p>These systems are stochastic or probabilistic in nature and therefore their outputs are unpredictation and random. After repeating the next token prediction till some point, the output string can be thought as remixes or the original training data or being inspired by it.</p>
-<p><img src="/assets/deep-dive-llms/llm_inference.png" alt="An example of model inference."></p>
+<p><img src="/personal-blog/assets/deep-dive-llms/llm_inference.png" alt="An example of model inference."></p>
 <h2>Base Model</h2>
 <p>Training these next token prediction models requires a lot of resources. For example to train GPT-2 we require eight H100 GPUs. Unfortunately, this cannot be done locally on your system.</p>
 <p>Base model is an internet text token simulator and not an assistant that helps answer the user's questions. Think of it like a token autocomplete.</p>
