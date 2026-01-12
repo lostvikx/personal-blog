@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home - Vikram&apos;s Blog</title>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link
+        href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;📜&lt;/text&gt;&lt;/svg&gt;"
+        rel="icon" />
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>[ <a href="/">Posts</a> ]</li>
+            <li>[ <a href="/about">About</a> ]</li>
+            <li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h1>Welcome to Vikram&apos;s Blog</h1>
+            <p>On this site you will find my thoughts on various topics that interest me ranging from tech to philosophy.</p>
+            <p>You are free to explore this website and get in touch with me through my email address.</p>
+        </section>
+        <section>
+            <h2>Recent Posts</h2>
+            <div id="recent-posts">
+                {% for post in collections.posts reversed %}
+                    <a href="{{ post.url }}">
+                        <div>
+                            <figure>
+                                <img src="/assets/thumbnails/{{ post.data.thumbnail }}" alt="post thumbnail" loading="lazy">
+                            </figure>
+                            <div class="details">
+                                <div>
+                                    <h3>{{ post.data.title }}</h3>
+                                    <p class="description">{{ post.data.description }}</p>
+                                </div>
+                                <p class="post-date">
+                                    <em>{{ post.data.date | simpleDate }}</em>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <p>Powered by GitHub Pages &#38; Eleventy.</p>
+    </footer>
+</body>
+
+</html>
