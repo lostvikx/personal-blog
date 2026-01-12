@@ -20,7 +20,7 @@ Points to note about the text dataset:
 
 ![FineWeb Pipeline: Getting the text data for LLMs.](/assets/deep-dive-llms/fineweb.png)
 
-To find more information about pre-training, please check out the [FineWeb documentation](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1).
+To find more information about pre-training, please check out the FineWeb [documentation](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1).
 
 Neural Nets expect a one-dimensional sequence of symbols and a finite set of symbols (tokens). The set of symbols represent the possible outputs for the model.
 
@@ -30,7 +30,7 @@ The main reason we tokenize the stream of characters to numbers is so that a Neu
 
 We would like to achieve a balance, in possible symbol size and the resulting sequence length. We prefer more symbols and shorter sequences. Why? Compression is comprehension, it leads a LLM to understand more information in a limited context window.
 
-To visualize how LLMs tokenize text, check out [Tiktokenizer](https://tiktokenizer.vercel.app).
+To visualize how LLMs tokenize text, check out [tiktokenizer](https://tiktokenizer.vercel.app).
 
 Here is an example of tokenization process shared in the lecture:
 
