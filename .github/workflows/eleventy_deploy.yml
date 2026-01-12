@@ -29,4 +29,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist # The directory containing your built static files
-          # publish_branch: gh-pages # The branch to deploy to (will be created if it doesn't exist)
+          publish_branch: gh-pages # The branch to deploy to (will be created if it doesn't exist)
