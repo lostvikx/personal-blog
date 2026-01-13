@@ -1,8 +1,8 @@
 ---
-title: "A Password Manager Guide"
+title: "Guide: Password Management using Pass"
 author: "Vikram S. Negi"
 date: 2025-04-15
-description: "Simple guide on how to set up a local password store."
+description: "Guide on how to set up a local password store."
 thumbnail: "f76334bef9a2b97b.jpg"
 ---
 
@@ -16,9 +16,9 @@ For more informaion on the installation of `pass` visit their [website](https://
 
 ## Setup
 
-Here is a quick setup.
+Here is a quick setup guide on using `pass`.
 
-1. Create a GPG key
+**Step 1:** Create a GPG key
 
 ```bash
 gpg --full-generate-key
@@ -26,13 +26,13 @@ gpg --full-generate-key
 
 This generates a full featured key pair (private & public). For more information check out the [documentation](https://docs.fedoraproject.org/en-US/quick-docs/create-gpg-keys/#_creating_gpg_keys_using_the_command_line).
 
-Find your GPG key id (you may use your email id).
+Find your GPG key id (you can also use your email id as a valid key id).
 
 ```bash
 gpg --list-keys
 ```
 
-2. Initialize pass
+**Step 2:**  Initialize pass
 
 ```bash
 pass init <gpg-id>
@@ -42,7 +42,7 @@ pass init <gpg-id>
 
 Each password is stored as a GPG encrypted file with the filename being a title, website, or resource that requires the password. These passwords can be arranged in meaningful heirarchies of directories.
 
-Note: All passwords live in `~/.password-store` directory.
+> Note: All passwords live in `~/.password-store` directory.
 
 Here is an example of such an hierarchy:
 
@@ -63,24 +63,25 @@ Here email, finance, and website are directories that organize the passwords sto
 
 ## Basic Commands
 
-* List passwords
+List passwords
 
 ```bash
 pass ls
 ```
 
-* Show passwords
+Show passwords
 
 ```bash
 pass show email/proton-mail
 ```
 
-* Generate a password
+Generate a password
+
 ```bash
 pass generate dev/github
 ```
 
-* Find more commands
+Find more commands
 
 ```bash
 pass --help
@@ -90,19 +91,19 @@ pass --help
 
 You can also use a remote git repostitory to backup your passwords.
 
-* Init git
+Init git
 
 ```bash
 pass git init
 ```
 
-* Add remote repo
+Add remote repo
 
 ```bash
 pass git remote add origin <git-url>
 ```
 
-* Push and pull changes
+Push and pull changes
 
 ```bash
 pass git push -u origin <branch>
@@ -112,12 +113,12 @@ pass git push -u origin <branch>
 
 You should always create a backup copy of both your public and private GPG key pair.
 
-* Export public key
+Export public key
 
 ```bash
 gpg --armor --export <gpg-id> > public_key.asc
 ```
-* Export private key
+Export private key
 
 ```bash
 gpg --armor --export-secret-keys <gpg-id> > private_key.asc
@@ -125,13 +126,14 @@ gpg --armor --export-secret-keys <gpg-id> > private_key.asc
 
 It is a good practice to verify the exported keys.
 
-* Public key
+Public key
 
 ```bash
 gpg --import public_key.asc
 ```
 
-* Private key
+Private key
+
 ```bash
 gpg --import --dry-run private_key.asc
 ```
@@ -140,10 +142,10 @@ gpg --import --dry-run private_key.asc
 
 Here is how you can edit a key.
 
-```
+```bash
 gpg --edit-key <gpg-id>
 ```
 
 ## Parting Regards
 
-If you know the basic command line commands, then navigating and working with `pass` becomes super easy and delightful. Personally, I believe that one should store their passwords locally on their own systems, rather than relying on a third-party service.
+If you know the basic command line commands, then navigating and working with `pass` becomes super easy and delightful. Personally, I believe that one should store their passwords locally on their own systems, rather than relying on a third-party service as it may be vulnerable to cyber attacks.

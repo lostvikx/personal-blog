@@ -96,5 +96,3 @@ Human: Why is the sky blue?
 ```
 
 Here the model picks up the context and completes the conversation between a human and an assistant.
-
-## Post-Training
