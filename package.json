@@ -4,8 +4,9 @@
   "description": "Blog site built using Eleventy.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx @11ty/eleventy --pathprefix personal-blog"
+    "dev": "npx @11ty/eleventy --pathprefix personal-blog --serve",
+    "build": "npx @11ty/eleventy --pathprefix personal-blog",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Vikram S. Negi",
