@@ -32,7 +32,7 @@ Simple reasoning behind why AI products are unenthical is because it is complete
 
 Here is an example that showcases the problem. You apply for a job and are from a community that is a minority in your country. You live in a neighborhood that has a high crime rate, now a machine learning model can easily pick-up these patterns and decide to not hire you.
 
-## Relinquishing Control
+### Relinquishing Control
 
 Decision making is already done by AI models, not this is not a plot of a sci-fi novel. This is aptly explained by Nudge Economics, it suggests that people are too lazy and will use whatever is the default.
 
@@ -61,3 +61,7 @@ Over-relying on these tools are not such a great idea as well. A recent [paper](
 In recent times, we have noticed an increase in money spent on AI research. But the main researchers are employeed by for-profit companies which is unlike the tradition. Universities and other research-first organizations just do not have the capital to create larges scale AI models.
 
 But, why do we need large AI models and what does it mean to be large? Well, an AI model trained on large amount of data combined with large amounts of compute power required to train them. Just the cost of doing AI research is stopping universities to proceed with it. And I predict this will not change until there is a more resource-efficient way to conduct them, perhaps a change in the underlying algorithms that don't necessarily follow the AI scaling law.
+
+## Conclusion
+
+We are increasingly drifting towards a world where our thoughts and perceptions are subtly shaped by the curated content we consume online. This algorithmic steering can lead us to believe in a singular "correct" way of thinking or acting, eroding our capacity for independent judgment and our control over how we truly feel about the world. It's a quiet surrender of agency, where the digital landscape dictates not just what we see, but what we come to believe.
