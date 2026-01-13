@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide: Backups using Borg - Vikram&apos;s Blog</title>
+    <meta name="author" content="Vikram S. Negi">
+    <meta name="description" content="A guide to using borg backup CLI tool.">
+    <link rel="stylesheet" href="/personal-blog/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>[ <a href="/personal-blog/">Posts</a> ]</li>
+            <li>[ <a href="/personal-blog/about">About</a> ]</li>
+            <li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h1>Guide: Backups using Borg</h1>
+            <p><em>By Vikram S. Negi on Dec 15, 2025</em></p>
+            <figure class="thumbnail-img">
+                <img src="/personal-blog/assets/thumbnails/borg_thumb.jpg" alt="Blog post thumbnail.">
+            </figure>
+            <hr>
+            <div class="content"><p>Taking regular backups of your computer system is considered a vital maintenance practice. It is crutial as hardware can fail anytime leading to loss of important personal data. It ensures safety by providing recovery option and peace of mind. A point to note is not how your hardware will fail, but when will it fail.</p>
+<p>A program that I like to use for taking backups and ensuring redundancy of my files is <a href="https://www.borgbackup.org/">borg</a>. Here is a concise guide to using the BorgBackup (borg) command-line tool. <code>borg</code> is a powerful, deduplicating backup program ideal for Linux systems.</p>
+<p>Borg mainly focuses on:</p>
+<ul>
+<li>Deduplication (store only unique data chunks)</li>
+<li>Compression</li>
+<li>Encryption</li>
+</ul>
+<p>The main goal of <code>borg</code> is to provide an efficient and secure way to backup data.</p>
+<h2>Installation</h2>
+<p>Install borg on your system using your distro specific package manager.</p>
+<pre><code class="language-bash">sudo pacman -S borg
+</code></pre>
+<h2>Create a Repository</h2>
+<p>Create a new repository for backing up your data. Use the <code>--encryption</code> flag to encrypt the repo with a passkey. Make sure the save that passkey using a password manager like <a href="/personal-blog/posts/password-manager">pass</a>.</p>
+<pre><code class="language-bash">borg init --encryption repokey /path/to/backup-repo
+</code></pre>
+<h2>Create an Archive</h2>
+<p>An archive is a backup created of the various files (or entire system) in the encrypted repository. As <code>borg</code> is a uses deduplication technique, meaning that it only the changes in the files are stored and not the duplicates. Hence, making it ideal for taking regular (or even daily) backups.</p>
+<p>The following is an example of creating a new archive in a given borg repository.</p>
+<pre><code class="language-bash">borg create                                     \
+    --stats                                     \
+    --list                                      \
+    --progress                                  \
+    --compression lz4                           \
+    --exclude-caches                            \
+    --exclude $HOME/.local                      \
+    --exclude $HOME/.var                        \
+    --exclude $HOME/.rustup                     \
+    --exclude $HOME/.cache                      \
+    --exclude $HOME/.wine                       \
+    --exclude $HOME/.mozilla                    \
+    --exclude $HOME/.cargo                      \
+    --exclude $HOME/Torrents                    \
+    --exclude $HOME/Games/PS2/games             \
+    --exclude $HOME/Games/Lutris/MagiPacks      \
+    --exclude $HOME/Games/Lutris/Installs       \
+    /path/to/backup-repo::'{hostname}-{now}'    \
+    $HOME
+</code></pre>
+<p>Note the various flags it uses:</p>
+<ul>
+<li><code>--stats</code>, <code>--list</code>, and <code>--progress</code>: show the progress and lists the files being archived (verbose).</li>
+<li><code>--compression lz4</code>: uses the lz4 compression algorithm.</li>
+<li><code>--exclude &lt;directory-name&gt;</code>: excludes the given directory.</li>
+</ul>
+<h2>List Archives</h2>
+<p>List all archives in a borg repository:</p>
+<pre><code class="language-bash">borg list /path/to/backup-repo
+</code></pre>
+<p>List all contents (files and directories) in a specific archive:</p>
+<pre><code class="language-bash">borg list /path/to/backup-repo::archive-name
+</code></pre>
+<p>Get archive information:</p>
+<pre><code class="language-bash">borg info /path/to/backup-repo::archive-name
+</code></pre>
+<h2>Extract Files</h2>
+<p>Extract the files in an archive to the current directory.</p>
+<pre><code class="language-bash">borg extract /path/to/backup-repo::archive-name
+</code></pre>
+<p>To extract in a specific location:</p>
+<pre><code class="language-bash">borg extract /path/to/backup-repo::archive-name $HOME/archive-name
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Use <code>--dry-run</code> to preview what would be extracted.</p>
+</blockquote>
+<h2>Mount Archive &amp; Copy Files</h2>
+<p>Sometimes it is easier to visualize the files by using a file manager application like <code>thunar</code>. We can mount a backup archive at a location to view and inspect it in a file manager.</p>
+<pre><code class="language-bash">mkdir -p /mnt/borg
+borg mount /path/to/repo::archive-name /mnt/borg
+</code></pre>
+<p>Now that we have mounted the archive to a location in our computer's file system, we can use a program called <code>rsync</code> to copy files in an efficient and reliable manner.</p>
+<pre><code class="language-bash">rsync -avhP /mnt/borg/path/to/some-dir $HOME/archive-data
+</code></pre>
+<p>When the copying in completed, always make sure to unmount the archive from the file system.</p>
+<pre><code class="language-bash">borg umount /mnt/borg
+</code></pre>
+<h2>Delete Old Archives</h2>
+<p>If running low on space on the disk (external), we can delete old archives or even entire repositories.</p>
+<pre><code class="language-bash">borg delete /path/to/backup-repo::archive-name
+</code></pre>
+<p>When deleting an archive, use the <code>compact</code> sub-command after using the <code>delete</code> to free up disk space.</p>
+<pre><code class="language-bash">borg compact --progress /path/to/backup-repo
+</code></pre>
+<h2>Verify Repository</h2>
+<p>To verify the integrity of the repository use the following command:</p>
+<pre><code class="language-bash">borg check /path/to/backup-repo
+</code></pre>
+<h2>Closing Remarks</h2>
+<p>Borg is an amazing tool to create and manage backup archives of Linux systems, making the process effortless and secure for users. Its deduplication and encryption features ensure that your data is backed up efficiently and is protected from bad actors. This guide has provided a foundational understanding of how to get started with <code>borg</code>.</p>
+<p>By utilizing <code>borg</code> as your regular backup manager, you can gain peace of mind knowing that your valuable data is safe and recoverable in case of any unforeseen events.</p>
+</div>
+        </article>
+    </main>
+
+    <footer>
+        <hr>
+        <p>Powered by GitHub Pages &#38; Eleventy.</p>
+    </footer>
+</body>
+
+</html>
