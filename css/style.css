@@ -53,6 +53,24 @@
     margin-bottom: 1em;
 }
 
+.blog-posts > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.blog-posts a {
+    font-weight: 600;
+}
+
+time {
+    font-family: monospace;
+    font-size: 1rem;
+}
+
 .details {
     padding: 1em;
     height: 100%;
@@ -94,10 +112,6 @@ section:nth-child(2) {
 
 .connect a {
     text-decoration: none;
-}
-
-.connect a:hover {
-    border-bottom: 2px solid var(--accent-color);
 }
 
 .connect {
