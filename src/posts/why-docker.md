@@ -1,5 +1,5 @@
 ---
-title: "Containerization on a Home Server"
+title: "Reasons for Containerization"
 author: "Vikram S. Negi"
 date: 2025-09-27
 description: "Understand various reasons for using containers on a home server."

@@ -21,18 +21,18 @@ figcaption {
 }
 
 pre {
-    background-color: var(--block-color);
-    padding: 1em;
-    overflow-x: auto;
-    margin: 0 0 1.5em 0;
+    background-color: var(--block-color) !important;
+    padding: 1em !important;
+    overflow-x: auto !important;
+    margin: 0 0 1.5em 0 !important;
 }
 
 pre > code {
-    display: block;
-    font-family: monospace;
-    white-space: pre;
-    word-break: normal;
-    color: var(--text-color);
+    display: block !important;
+    font-family: monospace !important;
+    white-space: pre !important;
+    word-break: normal !important;
+    color: var(--text-color) !important;
 }
 
 .sourceLine {
@@ -41,20 +41,22 @@ pre > code {
 }
 
 code {
-    font-family: monospace, monospace;
-    background-color: var(--block-color);
-    color: var(--text-color);
-    padding: 0.2em 0.4em;
-    font-size: 0.9rem;
+    font-family: monospace !important;
+    background-color: var(--block-color) !important;
+    color: var(--text-color) !important;
+    padding: 0.2em 0.4em !important;
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
 }
 
 article {
-    text-align: justify;
+    text-align: left;
 }
 
 article ol {
     list-style-type: decimal;
-    padding-left: 3rem;
+    padding-left: 2.5rem;
+    margin: 0 0 1.5em 0;
 }
 
 article ul {
@@ -63,7 +65,7 @@ article ul {
     margin: 0 0 1.5em 0;
 }
 
-article ul li {
+article ul li, article ol li {
     margin-bottom: 0.5rem;
 }
 

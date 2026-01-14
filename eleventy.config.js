@@ -8,10 +8,16 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("js");
 
   eleventyConfig.addFilter("simpleDate", (dateObj) => {
     // Formats as "Sep 29, 2025" based on default locale
     return dateObj.toLocaleString(undefined, { year: "numeric", month: "short", day: "2-digit" });
+  });
+
+  eleventyConfig.addFilter("dateStamp", (dateObj) => {
+    // Formats as "Sep 29, 2025" based on default locale
+    return dateObj.toISOString().slice(0, 10);
   });
 
   return {

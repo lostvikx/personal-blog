@@ -23,17 +23,13 @@ There is no doubt in my mind that these videos showcase real-life action sequenc
 
 And what makes these encounters even more alive is the Point Of View (POV) camera angle. They help us navigate the criminal case from the perspective of the officer. I don't know why films refuse to use such a cinematic angle where we literally see through the "eyes" of our protagonist.
 
-I also love to see the various hi-tech gadgets being deployed to aid the officer in action. From their taser guns to remote controlled drones, these never seem to bore me.
-
-The chase missions are real and dangerous, filled with uncertainty and excitement. The dash cameras installed in police vehicles deliver a sense of speed to the chases. I believe this is what the movies try to capture, but nothing beats the real thing.
+I also love to see the various hi-tech gadgets being deployed to aid the officer in action. From their taser guns to remote controlled drones, these never seem to bore me. The chase missions are real and dangerous, filled with uncertainty and excitement. The dash cameras installed in police vehicles deliver a sense of speed to the chases. I believe this is what the movies try to capture, but nothing beats the real thing.
 
 ## Criminal Psychology
 
 Why does a person commit crime? To seek revenge, to eliminate a threat, or just for the fun of it. One can argue that most crimes that are committed are mistakes, which can range from misdemenor to felony. Some criminals regret the actions that they took, while others show no mercy.
 
-Understanding how a criminal thinks can lead us to answers for the reasoning behind the act. Why was the act committed, could it have been prevented, and what can we do to ensure that this kind of situation can be avoided in the future.
-
-Was there a purpose behind the crime, nothing in life is meaningless. Citizens in a country must feel safe or else there will be chaos and crime thrives in chaotic environment. The main mission of an officer is to keep their locality safe.
+Understanding how a criminal thinks can lead us to answers for the reasoning behind the act. Why was the act committed, could it have been prevented, and what can we do to ensure that this kind of situation can be avoided in the future. Was there a purpose behind the crime, nothing in life is meaningless. Citizens in a country must feel safe or else there will be chaos and crime thrives in chaotic environment. The main mission of an officer is to keep their locality safe.
 
 ## De-Escalating the Situation
 

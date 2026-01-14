@@ -7,6 +7,7 @@
     <title>{{ title }} - Vikram&apos;s Blog</title>
     <meta name="author" content="{{ author }}">
     <meta name="description" content="{{ description }}">
+    <!--<link href="/css/prism.css" rel="stylesheet" />-->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
 </head>
@@ -24,10 +25,14 @@
         <article>
             <h1>{{ title }}</h1>
             <p><em>By {{ author }} on {{ date | simpleDate }}</em></p>
-            <figure class="thumbnail-img">
-                <img src="/assets/thumbnails/{{ thumbnail }}" alt="Blog post thumbnail.">
-            </figure>
-            <hr>
+            {% if thumbnail %}
+            <div>
+                <figure class="thumbnail-img">
+                    <img src="/assets/thumbnails/{{ thumbnail }}" alt="Blog post thumbnail.">
+                </figure>
+                <hr>
+            {% endif %}
+            </div>
             <div class="content">{{ content }}</div>
         </article>
     </main>
@@ -36,6 +41,7 @@
         <hr>
         <p>Powered by GitHub Pages &#38; Eleventy.</p>
     </footer>
+    <!--<script src="/js/prism.js"></script>-->
 </body>
 
 </html>
