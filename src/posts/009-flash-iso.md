@@ -25,7 +25,7 @@ Find your USB stick. It will usually be named something like `/dev/sdb`. Pay att
 
 > **CRITICAL:** From this point forward, replace `/dev/sdX` in the commands with your actual device.
 
-## Unmount the USB Device (if mounted)
+## Unmount the USB Device
 
 If your system automatically mounted the USB stick's partitions, you need to unmount them before using `dd`.
 
@@ -39,9 +39,7 @@ sudo umount /dev/sdX2
 
 If `umount` complains the device is busy, make sure no file manager, terminal, or other application is accessing it. Sometimes simply closing the file manager window showing the USB contents is enough.
 
----
-
-## Flash the ISO using `dd`
+## Flash the ISO
 
 Now, execute the `dd` command. Here is an example of how to flash your USB with an `.iso` file.
 
@@ -53,7 +51,7 @@ Command breakdown:
 
 * `sudo`: root privileges, this is required for writing directly to a device.
 * `dd`: command line utility for copying files.
-* `if=/path/to/your_image.iso` `if` stands for "input file".
+* `if=/path/to/your_image.iso`: `if` stands for "input file".
 * `of=/dev/sdX`: `of` stands for "output file".
 * `bs=4M`: `bs` stands for "block size".
 * `status=progress`: shows the progress of the operation.
@@ -71,7 +69,7 @@ sudo sync
 
 Wait for this command to complete (it will return to the prompt after flushing).
 
-### Safely Remove the USB Stick
+## Safely Remove the USB Stick
 
 You can now safely remove your USB stick. It should be bootable.
 
