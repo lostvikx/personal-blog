@@ -35,11 +35,6 @@ pre > code {
     color: var(--text-color) !important;
 }
 
-.sourceLine {
-    display: block;
-    color: var(--text-secondary);
-}
-
 code {
     font-family: monospace !important;
     background-color: var(--block-color) !important;

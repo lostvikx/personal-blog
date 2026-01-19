@@ -89,11 +89,17 @@ section:nth-child(2) {
 }
 
 .about {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    align-items: self-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     gap: 2rem;
+}
+
+@media (max-width: 600px) {
+    .about, .connect {
+        flex-wrap: wrap;
+    }
 }
 
 .about p {
@@ -109,6 +115,11 @@ section:nth-child(2) {
 .about img {
     width: 210px;
     border-radius: 50%;
+}
+
+.profile {
+    display: grid;
+    align-items: center;
 }
 
 .connect a {
