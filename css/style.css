@@ -59,7 +59,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 1rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .blog-posts a {
@@ -94,19 +94,20 @@ section:nth-child(2) {
     align-items: self-start;
     justify-content: center;
     gap: 2rem;
-    margin-bottom: 1rem;
 }
 
 .about p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .about ul {
     margin: 0;
+    padding-left: 2em;
+    margin-bottom: 1.5rem;
 }
 
 .about img {
-    width: 200px;
+    width: 210px;
     border-radius: 50%;
 }
 

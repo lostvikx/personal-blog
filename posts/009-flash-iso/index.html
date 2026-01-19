@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashing a USB Stick - Vikram&apos;s Blog</title>
+    <title>How to Flash a USB Stick - Vikram&apos;s Blog</title>
     <meta name="author" content="Vikram S. Negi">
     <meta name="description" content="A guide to using command line for flashing a USB stick.">
     <!--<link href="/css/prism.css" rel="stylesheet" />-->
@@ -23,13 +23,13 @@
 
     <main>
         <article>
-            <h1>Flashing a USB Stick</h1>
+            <h1>How to Flash a USB Stick</h1>
             <p><em>By Vikram S. Negi on Jan 18, 2026</em></p>
             
             
             <div class="content"><p>Flashing an .iso file to a USB stick is an important step in installing operating systems on a modern hardware. This process can be entirely done on the command line, I prefer this method as it is more reliable than using a GUI application. We will be using the <code>dd</code> command to accomplish our goal.</p>
 <blockquote>
-<p><strong>WARNING</strong>: <code>dd</code> is a powerful and dangerous command. If you specify the wrong output device (<code>of=</code>), you can permanently erase data on your main drive.</p>
+<p><strong>Warning</strong>: <code>dd</code> is a powerful and dangerous command. If you specify the wrong output device, you can permanently erase data on your main drive.</p>
 </blockquote>
 <h2>Identify USB Device</h2>
 <p>First step is to know the correct name for your USB stick (<code>/dev/sdb</code>). Note that we need to format the whole device and not a partition.</p>
@@ -40,9 +40,9 @@ sudo fdisk -l
 </code></pre>
 <p>Find your USB stick. It will usually be named something like <code>/dev/sdb</code>. Pay attention to its size to confirm it's your USB drive.</p>
 <blockquote>
-<p><strong>CRITICAL:</strong> From this point forward, replace <code>/dev/sdX</code> in the commands with your actual device.</p>
+<p><strong>Note:</strong> From this point forward, replace <code>/dev/sdX</code> in the commands with your actual device.</p>
 </blockquote>
-<h2>Unmount the USB Device (if mounted)</h2>
+<h2>Unmount the USB Device</h2>
 <p>If your system automatically mounted the USB stick's partitions, you need to unmount them before using <code>dd</code>.</p>
 <p>Unmount all partitions of your USB device:</p>
 <pre><code class="language-bash">sudo umount /dev/sdX1
@@ -50,16 +50,15 @@ sudo umount /dev/sdX2
 # ... and so on for any other partitions
 </code></pre>
 <p>If <code>umount</code> complains the device is busy, make sure no file manager, terminal, or other application is accessing it. Sometimes simply closing the file manager window showing the USB contents is enough.</p>
-<hr>
-<h2>Flash the ISO using <code>dd</code></h2>
+<h2>Flash the ISO</h2>
 <p>Now, execute the <code>dd</code> command. Here is an example of how to flash your USB with an <code>.iso</code> file.</p>
-<pre><code class="language-bash">sudo dd if=/path/to/your_image.iso of=/dev/sdX bs=4M status=progress conv=fsync
+<pre><code class="language-bash">sudo dd if=/path/to/image.iso of=/dev/sdX bs=4M status=progress conv=fsync
 </code></pre>
 <p>Command breakdown:</p>
 <ul>
 <li><code>sudo</code>: root privileges, this is required for writing directly to a device.</li>
 <li><code>dd</code>: command line utility for copying files.</li>
-<li><code>if=/path/to/your_image.iso</code> <code>if</code> stands for &quot;input file&quot;.</li>
+<li><code>if=/path/to/image.iso</code>: <code>if</code> stands for &quot;input file&quot;.</li>
 <li><code>of=/dev/sdX</code>: <code>of</code> stands for &quot;output file&quot;.</li>
 <li><code>bs=4M</code>: <code>bs</code> stands for &quot;block size&quot;.</li>
 <li><code>status=progress</code>: shows the progress of the operation.</li>
@@ -71,7 +70,7 @@ sudo umount /dev/sdX2
 <pre><code class="language-bash">sudo sync
 </code></pre>
 <p>Wait for this command to complete (it will return to the prompt after flushing).</p>
-<h3>Safely Remove the USB Stick</h3>
+<h2>Safely Remove the USB Stick</h2>
 <p>You can now safely remove your USB stick. It should be bootable.</p>
 <pre><code class="language-bash">sudo eject /dev/sdX
 </code></pre>
