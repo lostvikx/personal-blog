@@ -1,8 +1,8 @@
 ---
-title: "First Blog Post"
+title: "First Ever Blog Post"
 author: "Vikram S. Negi"
 date: 2025-03-11
-description: "This is my first ever blog post on this website."
+description: "The first ever blog post on this website."
 thumbnail: "c0b7099fa2677135.webp"
 ---
 

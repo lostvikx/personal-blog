@@ -1,8 +1,8 @@
 ---
-title: "Backups using Borg"
+title: "How to Create Backups using Borg"
 author: "Vikram S. Negi"
 date: 2025-12-15
-description: "A guide to using borg backup CLI tool."
+description: "Learn how to use the borg CLI tool to take backups of your system."
 ---
 
 Taking regular backups of your computer system is considered a vital maintenance practice. It is crutial as hardware can fail anytime leading to loss of important personal data. It ensures safety by providing recovery option and peace of mind. A point to note is not how your hardware will fail, but when will it fail.
@@ -41,29 +41,19 @@ The following is an example of creating a new archive in a given borg repository
 
 ```bash
 borg create                                     \
-    --stats                                     \
     --list                                      \
-    --progress                                  \
     --compression lz4                           \
     --exclude-caches                            \
     --exclude $HOME/.local                      \
     --exclude $HOME/.var                        \
-    --exclude $HOME/.rustup                     \
-    --exclude $HOME/.cache                      \
-    --exclude $HOME/.wine                       \
-    --exclude $HOME/.mozilla                    \
-    --exclude $HOME/.cargo                      \
-    --exclude $HOME/Torrents                    \
-    --exclude $HOME/Games/PS2/games             \
-    --exclude $HOME/Games/Lutris/MagiPacks      \
-    --exclude $HOME/Games/Lutris/Installs       \
+    --exclude $HOME/Games                       \
     /path/to/backup-repo::'{hostname}-{now}'    \
     $HOME
 ```
 
 Note the various flags it uses:
 
-* `--stats`, `--list`, and `--progress`: show the progress and lists the files being archived (verbose).
+* `--list`: lists the files being archived (verbose).
 * `--compression lz4`: uses the lz4 compression algorithm.
 * `--exclude <directory-name>`: excludes the given directory.
 

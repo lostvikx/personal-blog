@@ -1,8 +1,8 @@
 ---
-title: "Password Management using Pass"
+title: "How to Manage Passwords on Linux Locally Using GNU Pass"
 author: "Vikram S. Negi"
 date: 2025-04-15
-description: "Guide on how to set up a local password store."
+description: "A detailed guide on how to set up a local password store on a linux system."
 ---
 
 The digital world is more or less become the "real" world that most humans spend time on. And keeping your online space secure has become mission critical. One way to do exactly that is to use a password manager to store and manage all your passwords in one place.

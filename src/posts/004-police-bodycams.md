@@ -1,8 +1,8 @@
 ---
-title: "Allure of Police Bodycam Videos"
+title: "The Allure of Police Bodycam Videos"
 author: "Vikram S. Negi"
 date: 2025-04-22
-description: "On why police bodycam videos are so exhilarating."
+description: "Reasons as to why police bodycam videos are so exhilarating to watch."
 thumbnail: "83f78afda904cf3e.webp"
 ---
 

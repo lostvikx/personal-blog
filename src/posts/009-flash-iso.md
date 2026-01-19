@@ -1,5 +1,5 @@
 ---
-title: "Flashing a USB Stick"
+title: "How to Flash a USB Stick"
 author: "Vikram S. Negi"
 date: 2026-01-18
 description: "A guide to using command line for flashing a USB stick."
@@ -7,7 +7,7 @@ description: "A guide to using command line for flashing a USB stick."
 
 Flashing an .iso file to a USB stick is an important step in installing operating systems on a modern hardware. This process can be entirely done on the command line, I prefer this method as it is more reliable than using a GUI application. We will be using the `dd` command to accomplish our goal.
 
-> **WARNING**: `dd` is a powerful and dangerous command. If you specify the wrong output device (`of=`), you can permanently erase data on your main drive.
+> **Warning**: `dd` is a powerful and dangerous command. If you specify the wrong output device, you can permanently erase data on your main drive.
 
 ## Identify USB Device
 
@@ -23,7 +23,7 @@ sudo fdisk -l
 
 Find your USB stick. It will usually be named something like `/dev/sdb`. Pay attention to its size to confirm it's your USB drive.
 
-> **CRITICAL:** From this point forward, replace `/dev/sdX` in the commands with your actual device.
+> **Note:** From this point forward, replace `/dev/sdX` in the commands with your actual device.
 
 ## Unmount the USB Device
 
@@ -44,14 +44,14 @@ If `umount` complains the device is busy, make sure no file manager, terminal, o
 Now, execute the `dd` command. Here is an example of how to flash your USB with an `.iso` file.
 
 ```bash
-sudo dd if=/path/to/your_image.iso of=/dev/sdX bs=4M status=progress conv=fsync
+sudo dd if=/path/to/image.iso of=/dev/sdX bs=4M status=progress conv=fsync
 ```
 
 Command breakdown:
 
 * `sudo`: root privileges, this is required for writing directly to a device.
 * `dd`: command line utility for copying files.
-* `if=/path/to/your_image.iso`: `if` stands for "input file".
+* `if=/path/to/image.iso`: `if` stands for "input file".
 * `of=/dev/sdX`: `of` stands for "output file".
 * `bs=4M`: `bs` stands for "block size".
 * `status=progress`: shows the progress of the operation.

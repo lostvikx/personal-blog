@@ -1,8 +1,8 @@
 ---
-title: "Living in a World of AI Systems"
+title: "Living in a World with AI Systems"
 author: "Vikram S. Negi"
 date: 2025-03-18
-description: "My thoughts on people willingly reliquishing control to AI systems."
+description: "My thoughts and opinions on people willingly reliquishing control to AI systems around the world."
 thumbnail: "7e24ccc6a763a46c.png"
 ---
 

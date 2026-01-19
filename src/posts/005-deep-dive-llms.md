@@ -1,8 +1,8 @@
 ---
-title: "Deep Dive Into LLMs"
+title: "Deep Dive Into Large Language Models"
 author: "Vikram S. Negi"
 date: 2025-05-02
-description: "A deep dive into understanding how LLMs work."
+description: "A deep dive into understanding how LLMs are trained and used for extracting knowledge."
 thumbnail: "5afc6062d4a42efe.webp"
 ---
 
