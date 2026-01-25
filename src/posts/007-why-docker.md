@@ -10,27 +10,27 @@ Containerization is a process of depolying an application to a machine that is e
 
 Here are some reasons for performing containerization:
 
-### Isolation
+## Isolation
 
 Each service (e.g., Jellyfin, Minecraft Server, Home Assistant) runs in its own isolated container. This means they have their own set of dependencies and configurations, separate from each other and from the host system. This prevents dependency conflicts between services. If one service requires a specific version of a library that conflicts with another service, containers solve this. It also keeps your base system clean.
 
-### Portability
+## Portability
 
 A Docker container bundles everything a service needs to run in a single package. This makes it easy to move a service from one machine to another (from an old server to a new one) with minimal setup configuration and installation. This simplifies migration and disaster recovery. You can recreate your entire server setup on new hardware much faster.
 
-### Reproducibility
+## Reproducibility
 
 Dockerfiles (the blueprints for Docker images) allow you to define exactly how your service is built and configured. This ensures that you can always recreate the exact same environment on every build run. This provides consistency across deployments and easy rollback if something goes wrong.
 
-### Simplified Management
+## Simplified Management
 
 Docker provides a unified interface for starting, stopping, restarting, and updating services. Tools like Docker Compose allow you to define multi-service applications in a single file, making management even easier. This streamlined administration means that you do not have to learn the specific commands for each individual service's daemon. It is almost like running a build script to have the service online.
 
-### Security
+## Security
 
 Containers offer a layer of security by default as the application and its dependencies are isolate from the base system. Even if a service within a container is compromised, the attacker is generally confined to that container and has limited access to the underlying host system. This reduces the attack surface of your server and limits the scale of the attack.
 
-### Easy Updates and Rollbacks
+## Easy Updates and Rollbacks
 
 Updating a Dockerized service usually just involves pulling a new image and restarting the container. If an update breaks something, you can easily roll back to a previous working image. This achieves lesser downtime and lesser risk when performing updates.
 
