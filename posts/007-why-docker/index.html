@@ -35,17 +35,17 @@
             </div>
             <div class="content"><p>Containerization is a process of depolying an application to a machine that is exposed to users via the internet (using ssh). It is a highly recommended practice for running serives on a server. While it is not <a href="https://www.freecodecamp.org/news/7-cases-when-not-to-use-docker/">necessary</a> to use Docker (tool to achieve containerization) on a server, as we can directly run the service on the base system - there are various advantages to do so.</p>
 <p>Here are some reasons for performing containerization:</p>
-<h3>Isolation</h3>
+<h2>Isolation</h2>
 <p>Each service (e.g., Jellyfin, Minecraft Server, Home Assistant) runs in its own isolated container. This means they have their own set of dependencies and configurations, separate from each other and from the host system. This prevents dependency conflicts between services. If one service requires a specific version of a library that conflicts with another service, containers solve this. It also keeps your base system clean.</p>
-<h3>Portability</h3>
+<h2>Portability</h2>
 <p>A Docker container bundles everything a service needs to run in a single package. This makes it easy to move a service from one machine to another (from an old server to a new one) with minimal setup configuration and installation. This simplifies migration and disaster recovery. You can recreate your entire server setup on new hardware much faster.</p>
-<h3>Reproducibility</h3>
+<h2>Reproducibility</h2>
 <p>Dockerfiles (the blueprints for Docker images) allow you to define exactly how your service is built and configured. This ensures that you can always recreate the exact same environment on every build run. This provides consistency across deployments and easy rollback if something goes wrong.</p>
-<h3>Simplified Management</h3>
+<h2>Simplified Management</h2>
 <p>Docker provides a unified interface for starting, stopping, restarting, and updating services. Tools like Docker Compose allow you to define multi-service applications in a single file, making management even easier. This streamlined administration means that you do not have to learn the specific commands for each individual service's daemon. It is almost like running a build script to have the service online.</p>
-<h3>Security</h3>
+<h2>Security</h2>
 <p>Containers offer a layer of security by default as the application and its dependencies are isolate from the base system. Even if a service within a container is compromised, the attacker is generally confined to that container and has limited access to the underlying host system. This reduces the attack surface of your server and limits the scale of the attack.</p>
-<h3>Easy Updates and Rollbacks</h3>
+<h2>Easy Updates and Rollbacks</h2>
 <p>Updating a Dockerized service usually just involves pulling a new image and restarting the container. If an update breaks something, you can easily roll back to a previous working image. This achieves lesser downtime and lesser risk when performing updates.</p>
 <h2>Running Services Directly</h2>
 <p>Here are a few reasons you would deploy a service directly on the base system without any containerization:</p>

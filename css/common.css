@@ -18,7 +18,7 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    line-height: 1.5;
+    line-height: 1.65;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
@@ -53,11 +53,12 @@ h1 {
 }
 
 h1, h2, h3 {
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 h2, h3 {
     margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
 hr {
