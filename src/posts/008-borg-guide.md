@@ -27,7 +27,7 @@ sudo pacman -S borg
 
 ## Create a Repository
 
-Create a new repository for backing up your data. Use the `--encryption` flag to encrypt the repo with a passkey. Make sure the save that passkey using a password manager like [pass](/posts/password-manager).
+Create a new repository for backing up your data. Use the `--encryption` flag to encrypt the repo with a passkey. Make sure the save that passkey using a password manager like [pass](/posts/003-password-manager/).
 
 ```bash
 borg init --encryption repokey /path/to/backup-repo
