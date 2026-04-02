@@ -20,7 +20,7 @@ Points to note about the text dataset:
 
 ![FineWeb Pipeline: Getting the text data for LLMs.](/assets/deep-dive-llms/fineweb.png)
 
-To find more information about pre-training, please check out the FineWeb [documentation](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1).
+To find more information about pre-training, please check out the FineWeb [docs](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1).
 
 Neural Nets expect a one-dimensional sequence of symbols and a finite set of symbols (tokens). The set of symbols represent the possible outputs for the model.
 

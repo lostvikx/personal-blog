@@ -1,5 +1,5 @@
 ---
-title: "Some Reasons for Containerizing Applications"
+title: "Reasons for Containerizing Applications"
 author: "Vikram S. Negi"
 date: 2025-09-27
 description: "Learn the various reasons for using containers on home servers."
