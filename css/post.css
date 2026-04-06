@@ -1,4 +1,5 @@
-p img, figure img {
+p img,
+figure img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -60,7 +61,8 @@ article ul {
     margin: 0 0 1.5rem 0;
 }
 
-article ul li, article ol li {
+article ul li,
+article ol li {
     margin-bottom: 0.5rem;
 }
 
@@ -77,6 +79,7 @@ blockquote p {
 }
 
 .content img {
-    width: 75%;
+    /*width: 100%;*/
     margin: 2rem auto;
+    aspect-ratio: auto;
 }
