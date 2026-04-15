@@ -49,13 +49,13 @@ sudo dd if=/path/to/image.iso of=/dev/sdX bs=4M status=progress conv=fsync
 
 Command breakdown:
 
-* `sudo`: root privileges, this is required for writing directly to a device.
-* `dd`: command line utility for copying files.
-* `if=/path/to/image.iso`: `if` stands for "input file".
-* `of=/dev/sdX`: `of` stands for "output file".
-* `bs=4M`: `bs` stands for "block size".
-* `status=progress`: shows the progress of the operation.
-* `conv=fsync`: written data is immediately synced to the disk, preventing data loss if system crashes or drive is removed prematurely.
+- `sudo`: root privileges, this is required for writing directly to a device.
+- `dd`: command line utility for copying files.
+- `if=/path/to/image.iso`: `if` stands for "input file".
+- `of=/dev/sdX`: `of` stands for "output file".
+- `bs=4M`: `bs` stands for "block size".
+- `status=progress`: shows the progress of the operation.
+- `conv=fsync`: written data is immediately synced to the disk, preventing data loss if system crashes or drive is removed prematurely.
 
 Enter your password if prompted. The process can take several minutes depending on the size of the ISO and the write speed of your USB stick.
 

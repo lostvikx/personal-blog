@@ -18,7 +18,7 @@ Let's look at an example like the mighty YouTube's recommendation algorithm. Her
 4. Liked videos
 5. Random trending videos in user's location
 
-The ulimate goal here is not preserve or share knowledge about the world, but a way more simple yet terifying goal: retain user's attention. What this leads to is more watch time and thereby increasing the site's advertising revenue. 
+The ulimate goal here is not preserve or share knowledge about the world, but a way more simple yet terifying goal: retain user's attention. What this leads to is more watch time and thereby increasing the site's advertising revenue.
 
 This post is partly inspired by a [video](https://youtu.be/QEJpZjg8GuA) about how recommendation algorithms are changing how we think.
 

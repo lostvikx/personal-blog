@@ -27,7 +27,7 @@ Somehow I believe that these rules will ensure some level of quality in the work
 
 ## Humanity of Content
 
-I appreciate the beauty in nature or stories that are created by humans. In the world of AI generated slope it has become all the more valuable and enchanting. Here I will make an exception for using an diffuser models for generating thumbnail images for these blog posts. 
+I appreciate the beauty in nature or stories that are created by humans. In the world of AI generated slope it has become all the more valuable and enchanting. Here I will make an exception for using an diffuser models for generating thumbnail images for these blog posts.
 
 Generating images is a fun process that I personally enjoy doing in my free time. The thumbnail image will be added later by the program that will translate this markdown file to HTML. Hopefully, I see this project through and create something amazing.
 

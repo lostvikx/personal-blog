@@ -11,9 +11,9 @@ A program that I like to use for taking backups and ensuring redundancy of my fi
 
 Borg mainly focuses on:
 
-* Deduplication (store only unique data chunks)
-* Compression
-* Encryption
+- Deduplication (store only unique data chunks)
+- Compression
+- Encryption
 
 The main goal of `borg` is to provide an efficient and secure way to backup data.
 
@@ -53,9 +53,9 @@ borg create                                     \
 
 Note the various flags it uses:
 
-* `--list`: lists the files being archived (verbose).
-* `--compression lz4`: uses the lz4 compression algorithm.
-* `--exclude <directory-name>`: excludes the given directory.
+- `--list`: lists the files being archived (verbose).
+- `--compression lz4`: uses the lz4 compression algorithm.
+- `--exclude <directory-name>`: excludes the given directory.
 
 ## List Archives
 

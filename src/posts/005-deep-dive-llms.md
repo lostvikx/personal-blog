@@ -14,9 +14,9 @@ In this step we download and pre-process text data downloaded from the internet.
 
 Points to note about the text dataset:
 
-* High quantity - scaling law.
-* High quality - reputable sources.
-* High diversity - larger knowledge base for model.
+- High quantity - scaling law.
+- High quality - reputable sources.
+- High diversity - larger knowledge base for model.
 
 ![FineWeb Pipeline: Getting the text data for LLMs.](/assets/deep-dive-llms/fineweb.png)
 
@@ -90,7 +90,7 @@ Human: Hi there! Who are you?
 Assistant: Hello, I'm your AI Assistant. I'm here to help answer questions...
 
 Human: How does photosynthesis work?
-Assistant: Photosynthesis is the process by which green plants, algae... 
+Assistant: Photosynthesis is the process by which green plants, algae...
 
 Human: Why is the sky blue?
 ```

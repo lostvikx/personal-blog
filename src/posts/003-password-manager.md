@@ -31,7 +31,7 @@ Find your GPG key id (you can also use your email id as a valid key id).
 gpg --list-keys
 ```
 
-**Step 2:**  Initialize pass
+**Step 2:** Initialize pass
 
 ```bash
 pass init <gpg-id>
@@ -117,6 +117,7 @@ Export public key
 ```bash
 gpg --armor --export <gpg-id> > public_key.asc
 ```
+
 Export private key
 
 ```bash

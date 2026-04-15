@@ -38,9 +38,9 @@ Updating a Dockerized service usually just involves pulling a new image and rest
 
 Here are a few reasons you would deploy a service directly on the base system without any containerization:
 
-* Simplicity for a simple service: If you're running just one or two very simple services that have minimal dependencies (e.g., just a basic web server serving static files), and you're comfortable with direct package management.
-* Learning experience: For someone new to Linux, setting up a service directly can be a good way to understand how services are installed and configured at a deeper level.
-* Resource constraints: In extremely low-resource environments (Raspberry Pi with limited RAM), the overhead of Docker might be a significant factor.
+- Simplicity for a simple service: If you're running just one or two very simple services that have minimal dependencies (e.g., just a basic web server serving static files), and you're comfortable with direct package management.
+- Learning experience: For someone new to Linux, setting up a service directly can be a good way to understand how services are installed and configured at a deeper level.
+- Resource constraints: In extremely low-resource environments (Raspberry Pi with limited RAM), the overhead of Docker might be a significant factor.
 
 ## Conclusion
 
