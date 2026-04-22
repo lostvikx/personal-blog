@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
     --bg-color: #1e1e1e;
     --text-color: #ededed;
     --text-secondary: #afafaf;
-    --accent-color: #B26CFB;
+    --accent-color: #b26cfb;
     --alt-dark-color: #272727;
     --block-color: #343434;
-    --link-color: #80C4E9;
+    --link-color: #80c4e9;
 }
 
 * {
@@ -52,17 +52,21 @@ h1 {
     margin: 1rem 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     line-height: 1.5;
 }
 
-h2, h3 {
+h2,
+h3 {
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
 hr {
     margin: 2rem 1rem;
+    color: var(--block-color);
 }
 
 footer {
