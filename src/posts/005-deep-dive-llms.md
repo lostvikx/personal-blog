@@ -42,7 +42,7 @@ Here is an example of tokenization process shared in the lecture:
 
 ![Example of tokenization.](/assets/deep-dive-llms/tiktokenizer_example.png)
 
-> Note: Current LLMs typically use vocabulary of ~100,000 tokens.
+> **Note:** Current LLMs typically use vocabulary of ~100,000 tokens.
 
 ## Neural Network Training
 
@@ -78,7 +78,7 @@ Base model is an internet text token simulator and not an assistant that helps a
 
 In the task of predicting the next token for the sequence of context tokens, the model has "learned" a lot about the world. And the knowledge is stored in the parameters of the mode. The model has the capability to recongnize patterns from the input token sequence.
 
-> Think of the model parameters as a lossy compression of data from the internet.
+> **Tip:** Think of the model parameters as a lossy compression of data from the internet.
 
 Another interesting phenomenon is the ability for the base model to learn from the context tokens. This is also called few-shot learning. Here we can nudge the base model into answering our questions with providing more context to it.
 

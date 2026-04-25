@@ -18,27 +18,51 @@ title: Home
                 <p>
                     Greetings fellow internet user, on this website you might
                     find articles on various subjects like Linux, AI, and other
-                    topics that peak my curiosity. You are free to explore this
-                    site and get in touch with me using my email.
+                    topics that piqued my curiosity. You are free to explore
+                    this website and get in touch with me using my email.
+                </p>
+                <div class="gif-block">
+                    <img
+                        src="/assets/gifs/driving_dark.gif"
+                        alt="driving in night"
+                    />
+                    <p>
+                        The mission of this blog is to inspire readers to
+                        explore new interests and subjects. But mainly, it is
+                        for me to go on this journey of discovering fascinating
+                        topics and writing about them, which helps me learn more
+                        deeply and appriciate the foundational knowledge it
+                        brings.
+                    </p>
+                </div>
+                <p>
+                    Through each post, my hope is to document ideas, share
+                    useful guides, and capture small curiosities from the
+                    internet and my everyday life.
                 </p>
             </section>
             <section>
                 <h2>Blog Posts</h2>
+                <p></p>
                 <div class="blog-posts">
                     {% for post in collections.posts reversed %}
-                    <div title="{{ post.data.description }}">
+                    <div>
                         <time>{{ post.data.date | dateStamp }}</time>
-                        <a href="{{ post.url }}">{{ post.data.title }}</a>
+                        <a
+                            href="{{ post.url }}"
+                            title="{{ post.data.description }}"
+                            >{{ post.data.title }}</a
+                        >
                     </div>
                     {% endfor %}
                 </div>
             </section>
             <section>
-                <h2>Topics</h2>
-                <!--<p>
+                <h2>Explore Topics</h2>
+                <p>
                     The following are some topics that have piqued my interest
                     enough for me to write blog posts about them.
-                </p>-->
+                </p>
                 <div class="tags">
                     <ul>
                         {% for tag in collections.tagList %}

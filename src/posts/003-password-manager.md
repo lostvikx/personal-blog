@@ -12,7 +12,7 @@ But, you are someone who doesn't trust the companies that offer you these servic
 
 Here is when you should use `pass` which is a local password managing utility tool. And I love its simplicity. `pass` stores your password as encrypted files using GNU Privacy Guard (GPG).
 
-For more informaion on the installation of `pass` visit their [website](https://www.passwordstore.org).
+> **Note:** For more informaion on the installation on `pass` visit their [website](https://www.passwordstore.org).
 
 ## Setup
 
@@ -42,7 +42,7 @@ pass init <gpg-id>
 
 Each password is stored as a GPG encrypted file with the filename being a title, website, or resource that requires the password. These passwords can be arranged in meaningful heirarchies of directories.
 
-> Note: All passwords live in `~/.password-store` directory.
+> **Note:** All passwords live in `~/.password-store` directory.
 
 Here is an example of such an hierarchy:
 
@@ -63,47 +63,43 @@ Here email, finance, and website are directories that organize the passwords sto
 
 ## Basic Commands
 
-List passwords
+These are some useful `pass ` commands:
+
+List all saved passwords
 
 ```bash
 pass ls
 ```
 
-Show passwords
+Show a specific password
 
 ```bash
 pass show email/proton-mail
 ```
 
-Generate a password
+Generate a new password
 
 ```bash
 pass generate dev/github
 ```
 
-Find more commands
-
-```bash
-pass --help
-```
-
 ## Syncing Passwords
 
-You can also use a remote git repostitory to backup your passwords.
+You may also use a remote git repostitory to backup your passwords.
 
-Init git
+Initialize a git repository
 
 ```bash
 pass git init
 ```
 
-Add remote repo
+Add remote git repository
 
 ```bash
-pass git remote add origin <git-url>
+pass git remote add origin <url>
 ```
 
-Push and pull changes
+Push or pull changes to the remote repository
 
 ```bash
 pass git push -u origin <branch>
@@ -125,7 +121,7 @@ Export private key
 gpg --armor --export-secret-keys <gpg-id> > private_key.asc
 ```
 
-It is a good practice to verify the exported keys.
+> **Note:** It is a good practice to verify the exported keys.
 
 Public key
 
