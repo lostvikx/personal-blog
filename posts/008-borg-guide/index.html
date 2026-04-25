@@ -1,33 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Create Backups using Borg - Vikram&apos;s Blog</title>
+<link rel="stylesheet" href="/personal-blog/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/personal-blog/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/personal-blog/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/personal-blog/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/personal-blog/assets/icons/site.webmanifest">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Create Backups using Borg - Vikram&apos;s Blog</title>
-    <meta name="author" content="Vikram S. Negi">
-    <meta name="description" content="Learn how to use the borg CLI tool to take backups of your system.">
-    <link href="/personal-blog/css/prism.css" rel="stylesheet">
-    <link rel="stylesheet" href="/personal-blog/css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
-</head>
+        <meta name="author" content="Vikram S. Negi">
+        <meta name="description" content="Learn how to use the borg CLI tool to take backups of your system.">
+        <link href="/personal-blog/css/prism.css" rel="stylesheet">
+    </head>
 
-<body>
-    <nav>
-        <ul>
-            <li>[ <a href="/personal-blog/">Posts</a> ]</li>
-            <li>[ <a href="/personal-blog/about">About</a> ]</li>
-            <li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>
-        </ul>
-    </nav>
+    <body>
+        <nav>
+    <ul>
+        <li>[ <a href="/personal-blog/">Home</a> ]</li>
+        <li>[ <a href="/personal-blog/tag/posts/">Posts</a> ]</li>
+        <li>[ <a href="/personal-blog/about/">About</a> ]</li>
+        <!--<li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>-->
+    </ul>
+</nav>
 
-    <main>
-        <article>
-            <h1>How to Create Backups using Borg</h1>
-            <p><em>By Vikram S. Negi on Dec 15, 2025</em></p>
-            
-            
-            <div class="content"><p>Taking regular backups of your computer system is considered a vital maintenance practice. It is crutial as hardware can fail anytime leading to loss of important personal data. It ensures safety by providing recovery option and peace of mind. A point to note is not how your hardware will fail, but when will it fail.</p>
+
+        <main>
+            <article>
+                <h1>How to Create Backups using Borg</h1>
+
+                <p><em>By Vikram S. Negi on Dec 15, 2025</em></p>
+
+                
+
+                <div class="content"><p>Taking regular backups of your computer system is considered a vital maintenance practice. It is crutial as hardware can fail anytime leading to loss of important personal data. It ensures safety by providing recovery option and peace of mind. A point to note is not how your hardware will fail, but when will it fail.</p>
 <p>A program that I like to use for taking backups and ensuring redundancy of my files is <a href="https://www.borgbackup.org/">borg</a>. Here is a concise guide to using the BorgBackup (borg) command-line tool. <code>borg</code> is a powerful, deduplicating backup program ideal for Linux systems.</p>
 <p>Borg mainly focuses on:</p>
 <ul>
@@ -109,14 +117,25 @@ borg mount /path/to/repo::archive-name /mnt/borg
 <p>Borg is an amazing tool to create and manage backup archives of Linux systems, making the process effortless and secure for users. Its deduplication and encryption features ensure that your data is backed up efficiently and is protected from bad actors. This guide has provided a foundational understanding of how to get started with <code>borg</code>.</p>
 <p>By utilizing <code>borg</code> as your regular backup manager, you can gain peace of mind knowing that your valuable data is safe and recoverable in case of any unforeseen events.</p>
 </div>
-        </article>
-    </main>
 
-    <footer>
-        <hr>
-        <p>Powered by GitHub Pages &#38; Eleventy.</p>
-    </footer>
-    <script src="/personal-blog/js/prism.js"></script>
-</body>
+                
+                <p>
+                    <strong>Tags:</strong>
+                    
+                    <a href="/personal-blog/tag/guide/">#guide</a>
+                    
+                    <a href="/personal-blog/tag/linux/">#linux</a>
+                    
+                </p>
+                
+            </article>
+        </main>
 
+        <footer>
+    <hr>
+    <p>Powered by GitHub Pages &#38; Eleventy.</p>
+</footer>
+
+        <script src="/personal-blog/js/prism.js"></script>
+    </body>
 </html>

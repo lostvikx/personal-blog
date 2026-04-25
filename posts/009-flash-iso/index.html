@@ -1,44 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Flash a USB Stick - Vikram&apos;s Blog</title>
+<link rel="stylesheet" href="/personal-blog/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/personal-blog/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/personal-blog/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/personal-blog/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/personal-blog/assets/icons/site.webmanifest">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Flash a USB Stick - Vikram&apos;s Blog</title>
-    <meta name="author" content="Vikram S. Negi">
-    <meta name="description" content="A guide to using command line for flashing a USB stick.">
-    <link href="/personal-blog/css/prism.css" rel="stylesheet">
-    <link rel="stylesheet" href="/personal-blog/css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
-</head>
+        <meta name="author" content="Vikram S. Negi">
+        <meta name="description" content="A guide to using command line for flashing a USB stick.">
+        <link href="/personal-blog/css/prism.css" rel="stylesheet">
+    </head>
 
-<body>
-    <nav>
-        <ul>
-            <li>[ <a href="/personal-blog/">Posts</a> ]</li>
-            <li>[ <a href="/personal-blog/about">About</a> ]</li>
-            <li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>
-        </ul>
-    </nav>
+    <body>
+        <nav>
+    <ul>
+        <li>[ <a href="/personal-blog/">Home</a> ]</li>
+        <li>[ <a href="/personal-blog/tag/posts/">Posts</a> ]</li>
+        <li>[ <a href="/personal-blog/about/">About</a> ]</li>
+        <!--<li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>-->
+    </ul>
+</nav>
 
-    <main>
-        <article>
-            <h1>How to Flash a USB Stick</h1>
-            <p><em>By Vikram S. Negi on Jan 18, 2026</em></p>
-            
-            
-            <div class="content"><p>Flashing an .iso file to a USB stick is an important step in installing operating systems on a modern hardware. This process can be entirely done on the command line, I prefer this method as it is more reliable than using a GUI application. We will be using the <code>dd</code> command to accomplish our goal.</p>
+
+        <main>
+            <article>
+                <h1>How to Flash a USB Stick</h1>
+
+                <p><em>By Vikram S. Negi on Jan 18, 2026</em></p>
+
+                
+
+                <div class="content"><p>Flashing an .iso file to a USB stick is an important step in installing operating systems on a modern hardware. This process can be entirely done on the command line, I prefer this method as it is more reliable than using a GUI application. We will be using the <code>dd</code> command to accomplish our goal.</p>
 <blockquote>
-<p><strong>Warning</strong>: <code>dd</code> is a powerful and dangerous command. If you specify the wrong output device, you can permanently erase data on your main drive.</p>
+<p><strong>Warning:</strong> <code>dd</code> is a powerful and dangerous command. If you specify the wrong output device, you can permanently erase data on your main drive.</p>
 </blockquote>
 <h2>Identify USB Device</h2>
-<p>First step is to know the correct name for your USB stick (<code>/dev/sdb</code>). Note that we need to format the whole device and not a partition.</p>
-<p>List block devices plugging in your USB:</p>
+<p>First step is to know the correct name for your USB stick (e.g. <code>/dev/sdb</code>). Next we must understand that we need to format the whole device and not just a partition.</p>
+<p>List all the block devices:</p>
 <pre><code class="language-bash">lsblk
 # OR
 sudo fdisk -l
 </code></pre>
-<p>Find your USB stick. It will usually be named something like <code>/dev/sdb</code>. Pay attention to its size to confirm it's your USB drive.</p>
+<p>Find your USB stick. It will usually be named something like <code>/dev/sdb</code>. Pay attention to its size to confirm it is your USB drive and not some other disk.</p>
 <blockquote>
 <p><strong>Note:</strong> From this point forward, replace <code>/dev/sdX</code> in the commands with your actual device.</p>
 </blockquote>
@@ -49,22 +57,12 @@ sudo fdisk -l
 sudo umount /dev/sdX2
 # ... and so on for any other partitions
 </code></pre>
-<p>If <code>umount</code> complains the device is busy, make sure no file manager, terminal, or other application is accessing it. Sometimes simply closing the file manager window showing the USB contents is enough.</p>
+<p>If <code>umount</code> complains the device is busy, make sure no file manager, terminal, or other application is accessing it. Sometimes simply closing the file manager window showing the USB contents is enough to unmount it.</p>
 <h2>Flash the ISO</h2>
-<p>Now, execute the <code>dd</code> command. Here is an example of how to flash your USB with an <code>.iso</code> file.</p>
+<p>Now, execute the <code>dd</code> command. Here is an example of how to flash your USB stick with an <code>.iso</code> file.</p>
 <pre><code class="language-bash">sudo dd if=/path/to/image.iso of=/dev/sdX bs=4M status=progress conv=fsync
 </code></pre>
-<p>Command breakdown:</p>
-<ul>
-<li><code>sudo</code>: root privileges, this is required for writing directly to a device.</li>
-<li><code>dd</code>: command line utility for copying files.</li>
-<li><code>if=/path/to/image.iso</code>: <code>if</code> stands for &quot;input file&quot;.</li>
-<li><code>of=/dev/sdX</code>: <code>of</code> stands for &quot;output file&quot;.</li>
-<li><code>bs=4M</code>: <code>bs</code> stands for &quot;block size&quot;.</li>
-<li><code>status=progress</code>: shows the progress of the operation.</li>
-<li><code>conv=fsync</code>: written data is immediately synced to the disk, preventing data loss if system crashes or drive is removed prematurely.</li>
-</ul>
-<p>Enter your password if prompted. The process can take several minutes depending on the size of the ISO and the write speed of your USB stick.</p>
+<p>The process can take several minutes depending on the size of the ISO and the write speed of your USB stick.</p>
 <h2>Synchronize Data to Disk</h2>
 <p>Even after <code>dd</code> reports completion, some data might still be in the kernel's write buffer. It's good practice to explicitly flush these buffers to the disk.</p>
 <pre><code class="language-bash">sudo sync
@@ -77,14 +75,25 @@ sudo umount /dev/sdX2
 <h2>Conclusion</h2>
 <p>Hopefully this simple guide to using the command line for flashing an <code>.iso</code> file to a USB stick is useful. Command line is my preferred choice for flashing a USB stick, it provides more transparency and reliability than a traditional GUI application.</p>
 </div>
-        </article>
-    </main>
 
-    <footer>
-        <hr>
-        <p>Powered by GitHub Pages &#38; Eleventy.</p>
-    </footer>
-    <script src="/personal-blog/js/prism.js"></script>
-</body>
+                
+                <p>
+                    <strong>Tags:</strong>
+                    
+                    <a href="/personal-blog/tag/guide/">#guide</a>
+                    
+                    <a href="/personal-blog/tag/linux/">#linux</a>
+                    
+                </p>
+                
+            </article>
+        </main>
 
+        <footer>
+    <hr>
+    <p>Powered by GitHub Pages &#38; Eleventy.</p>
+</footer>
+
+        <script src="/personal-blog/js/prism.js"></script>
+    </body>
 </html>

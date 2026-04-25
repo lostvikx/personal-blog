@@ -22,7 +22,7 @@ figcaption {
 }
 
 pre {
-    background-color: var(--block-color) !important;
+    background-color: var(--code-block-color) !important;
     padding: 1em !important;
     overflow-x: auto !important;
     margin: 0 0 1.5rem 0 !important;
@@ -38,8 +38,9 @@ pre > code {
 
 code {
     font-family: monospace !important;
-    background-color: var(--block-color) !important;
-    color: var(--text-color) !important;
+    background-color: var(--code-block-color) !important;
+    /*color: var(--text-secondary) !important;*/
+    color: var(--accent-color) !important;
     padding: 0.2em 0.4em !important;
     font-size: 0.9rem !important;
     font-weight: 400 !important;

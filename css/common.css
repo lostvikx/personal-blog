@@ -1,13 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap");
 
-:root {
+/*:root {
     --bg-color: #1e1e1e;
     --text-color: #ededed;
     --text-secondary: #afafaf;
     --accent-color: #b26cfb;
-    --alt-dark-color: #272727;
-    --block-color: #343434;
+    --code-block-color: #343434;
     --link-color: #80c4e9;
+    --font-family: sans-serif;
+}*/
+
+:root {
+    /* Sailor Moon inspired dark theme */
+    --bg-color: #181422; /* deep moonlit purple */
+    --text-color: #f8f4ff; /* soft moonlight white */
+    --text-secondary: #c8b9e6; /* lavender gray */
+    --accent-color: #ff7eb6; /* magical pink */
+    --code-block-color: #2a2238; /* dark violet */
+    --link-color: #7dcfff; /* crystal blue */
+    --visited-link-color: #d8a8ff;
+    --text-font: "Open Sans", sans-serif;
+    --header-font: "Roboto Slab", serif;
 }
 
 * {
@@ -17,7 +30,9 @@
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    /*font-family: "Open Sans", sans-serif;*/
+    font-family: var(--text-font);
+    font-display: swap;
     line-height: 1.65;
     margin: 0;
     padding: 0;
@@ -28,6 +43,10 @@ body {
 
 a {
     color: var(--link-color);
+}
+
+a:visited {
+    color: var(--visited-link-color);
 }
 
 a:hover {
@@ -56,6 +75,7 @@ h1,
 h2,
 h3 {
     line-height: 1.5;
+    font-family: var(--header-font);
 }
 
 h2,
@@ -66,7 +86,7 @@ h3 {
 
 hr {
     margin: 2rem 1rem;
-    color: var(--block-color);
+    color: var(--code-block-color);
 }
 
 footer {
@@ -89,6 +109,7 @@ nav {
     background: var(--bg-color);
     padding: 0.5em 0;
     text-align: center;
+    /*font-family: monospace;*/
 }
 
 nav ul {
@@ -108,4 +129,13 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+nav ul li a:visited {
+    color: var(--text-color);
+}
+
+nav ul li a:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
 }

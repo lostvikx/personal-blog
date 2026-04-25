@@ -1,39 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Dive Into Large Language Models - Vikram&apos;s Blog</title>
+<link rel="stylesheet" href="/personal-blog/css/style.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/personal-blog/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/personal-blog/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/personal-blog/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/personal-blog/assets/icons/site.webmanifest">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep Dive Into Large Language Models - Vikram&apos;s Blog</title>
-    <meta name="author" content="Vikram S. Negi">
-    <meta name="description" content="A deep dive into understanding how LLMs are trained and used for extracting knowledge.">
-    <link href="/personal-blog/css/prism.css" rel="stylesheet">
-    <link rel="stylesheet" href="/personal-blog/css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
-</head>
+        <meta name="author" content="Vikram S. Negi">
+        <meta name="description" content="A deep dive into understanding how LLMs are trained and used for extracting knowledge.">
+        <link href="/personal-blog/css/prism.css" rel="stylesheet">
+    </head>
 
-<body>
-    <nav>
-        <ul>
-            <li>[ <a href="/personal-blog/">Posts</a> ]</li>
-            <li>[ <a href="/personal-blog/about">About</a> ]</li>
-            <li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>
-        </ul>
-    </nav>
+    <body>
+        <nav>
+    <ul>
+        <li>[ <a href="/personal-blog/">Home</a> ]</li>
+        <li>[ <a href="/personal-blog/tag/posts/">Posts</a> ]</li>
+        <li>[ <a href="/personal-blog/about/">About</a> ]</li>
+        <!--<li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>-->
+    </ul>
+</nav>
 
-    <main>
-        <article>
-            <h1>Deep Dive Into Large Language Models</h1>
-            <p><em>By Vikram S. Negi on May 02, 2025</em></p>
-            
-            <div>
-                <figure class="thumbnail-img">
-                    <img src="/personal-blog/assets/thumbnails/5afc6062d4a42efe.webp" alt="Blog post thumbnail.">
-                </figure>
-                <hr>
-            
-            </div>
-            <div class="content"><p>The following is a summary of the things I learned in a course created by Andrej Karpathy on <a href="https://youtu.be/7xTGNNLPyMI">YouTube</a>. This is by far the most detailed yet easy to follow teachings of how Large Language Models (LLMs) work.</p>
+
+        <main>
+            <article>
+                <h1>Deep Dive Into Large Language Models</h1>
+
+                <p><em>By Vikram S. Negi on May 02, 2025</em></p>
+
+                
+                <div>
+                    <figure class="thumbnail-img">
+                        <picture><source type="image/webp" srcset="/personal-blog/img/VJQZTrbkU5-1280.webp 1280w"><img loading="lazy" decoding="async" src="/personal-blog/img/VJQZTrbkU5-1280.gif" alt="Blog post thumbnail." width="1280" height="720"></picture>
+                    </figure>
+                    <hr>
+                </div>
+                
+
+                <div class="content"><p>The following is a summary of the things I learned in a course created by Andrej Karpathy on <a href="https://youtu.be/7xTGNNLPyMI">YouTube</a>. This is by far the most detailed yet easy to follow teachings of how Large Language Models (LLMs) work.</p>
 <h2>Pre-Training</h2>
 <p>In this step we download and pre-process text data downloaded from the internet. We would like to have a corpus of high quality text from publicly available data sources.</p>
 <p>Points to note about the text dataset:</p>
@@ -42,7 +51,7 @@
 <li>High quality - reputable sources.</li>
 <li>High diversity - larger knowledge base for model.</li>
 </ul>
-<p><img src="/personal-blog/assets/deep-dive-llms/fineweb.png" alt="FineWeb Pipeline: Getting the text data for LLMs."></p>
+<p><picture><source type="image/webp" srcset="/personal-blog/img/OHrjYSdVva-1786.webp 1786w"><img loading="lazy" decoding="async" src="/personal-blog/img/OHrjYSdVva-1786.gif" alt="FineWeb Pipeline: Getting the text data for LLMs." width="1786" height="672"></picture></p>
 <p>To find more information about pre-training, please check out the FineWeb <a href="https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1">docs</a>.</p>
 <p>Neural Nets expect a one-dimensional sequence of symbols and a finite set of symbols (tokens). The set of symbols represent the possible outputs for the model.</p>
 <h2>Tokenization</h2>
@@ -56,15 +65,15 @@
 <li>Use byte-pair encoding algorithm (each pair becomes a new token)</li>
 <li>The previous step can be repeated (this gives us a shorter sequence of string with a larger vocabulary)</li>
 </ol>
-<p><img src="/personal-blog/assets/deep-dive-llms/tiktokenizer_example.png" alt="Example of tokenization."></p>
+<p><picture><source type="image/webp" srcset="/personal-blog/img/AJnKoslIf--793.webp 793w"><img loading="lazy" decoding="async" src="/personal-blog/img/AJnKoslIf--793.gif" alt="Example of tokenization." width="793" height="444"></picture></p>
 <blockquote>
-<p>Note: Current LLMs typically use vocabulary of ~100,000 tokens.</p>
+<p><strong>Note:</strong> Current LLMs typically use vocabulary of ~100,000 tokens.</p>
 </blockquote>
 <h2>Neural Network Training</h2>
 <p>Training a neural network takes the most amount of compute resources. Also, the max input dimensions (tokens) of the network is decided arbitrarily, eg. 8,000 token (context) window. The input to the neural net is called the context. In simple words we are solving a multi-class classification problem with the labels being the token vocabulary.</p>
 <p>The input to the network can be of variable length from 0 to max context window. And the output of the network is a probabilistic distribution of the tokens.</p>
 <p>Training a neural network means to update the probability distribution to conform to the training data. In every iteration of training, we update the probabilities of the distribution of the possible tokens (~100,000 tokens). We are trying to nudge the model to guess the next output token.</p>
-<p><img src="/personal-blog/assets/deep-dive-llms/llm_io.png" alt="Diagram of a neural network I/O."></p>
+<p><picture><source type="image/webp" srcset="/personal-blog/img/kZSRfcNk0Z-876.webp 876w"><img loading="lazy" decoding="async" src="/personal-blog/img/kZSRfcNk0Z-876.gif" alt="Diagram of a neural network I/O." width="876" height="374"></picture></p>
 <h2>Neural Network Internals</h2>
 <p>A neural net may have billions of parameters, called as weights and biases. These values are tuned or adjusted during the training phase of the model. If the prediction is incorrect the weights are adjusted.</p>
 <p>A model is nothing but a mathematical function parameterized by the weights of the model and takes an input of a fixed size. Note that each token has a vector representation also called as an embedding. This vector is of a fixed dimension.</p>
@@ -72,13 +81,13 @@
 <h2>Inference</h2>
 <p>Given some input tokens, the model samples a token from the output probability distirbution. The tokens with higher probability have a higher chance of being sampled.</p>
 <p>These systems are stochastic or probabilistic in nature and therefore their outputs are unpredictation and random. After repeating the next token prediction till some point, the output string can be thought as remixes or the original training data or being inspired by it.</p>
-<p><img src="/personal-blog/assets/deep-dive-llms/llm_inference.png" alt="An example of model inference."></p>
+<p><picture><source type="image/webp" srcset="/personal-blog/img/FZn-cy3-8i-461.webp 461w"><img loading="lazy" decoding="async" src="/personal-blog/img/FZn-cy3-8i-461.gif" alt="An example of model inference." width="461" height="298"></picture></p>
 <h2>Base Model</h2>
 <p>Training these next token prediction models requires a lot of resources. For example to train GPT-2 we require eight H100 GPUs. Unfortunately, this cannot be done locally on your system.</p>
 <p>Base model is an internet text token simulator and not an assistant that helps answer the user's questions. Think of it like a token autocomplete.</p>
 <p>In the task of predicting the next token for the sequence of context tokens, the model has &quot;learned&quot; a lot about the world. And the knowledge is stored in the parameters of the mode. The model has the capability to recongnize patterns from the input token sequence.</p>
 <blockquote>
-<p>Think of the model parameters as a lossy compression of data from the internet.</p>
+<p><strong>Tip:</strong> Think of the model parameters as a lossy compression of data from the internet.</p>
 </blockquote>
 <p>Another interesting phenomenon is the ability for the base model to learn from the context tokens. This is also called few-shot learning. Here we can nudge the base model into answering our questions with providing more context to it.</p>
 <p>We can create a translator program by constructing a few-shot prompt and leveraging in-context learning ability of the base model.</p>
@@ -93,14 +102,25 @@ Human: Why is the sky blue?
 </code></pre>
 <p>Here the model picks up the context and completes the conversation between a human and an assistant.</p>
 </div>
-        </article>
-    </main>
 
-    <footer>
-        <hr>
-        <p>Powered by GitHub Pages &#38; Eleventy.</p>
-    </footer>
-    <script src="/personal-blog/js/prism.js"></script>
-</body>
+                
+                <p>
+                    <strong>Tags:</strong>
+                    
+                    <a href="/personal-blog/tag/ai/">#ai</a>
+                    
+                    <a href="/personal-blog/tag/info/">#info</a>
+                    
+                </p>
+                
+            </article>
+        </main>
 
+        <footer>
+    <hr>
+    <p>Powered by GitHub Pages &#38; Eleventy.</p>
+</footer>
+
+        <script src="/personal-blog/js/prism.js"></script>
+    </body>
 </html>
