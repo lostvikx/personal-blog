@@ -12,6 +12,20 @@
     font-size: 1.05rem;
 }
 
+.tags ul {
+    list-style-type: disc;
+    padding-left: 2em;
+    margin: 0 0 1.5rem 0;
+}
+
+.tags ul li {
+    margin-bottom: 0.5rem;
+}
+
+.tags a {
+    font-weight: 600;
+}
+
 .post-date {
     margin: 0;
 }
@@ -60,9 +74,9 @@ time {
     font-size: 0.9rem;
 }
 
-section:nth-child(2) {
+/*section:nth-child(2) {
     margin-top: 2rem;
-}
+}*/
 
 .about {
     display: flex;

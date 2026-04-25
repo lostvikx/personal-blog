@@ -4,6 +4,7 @@ author: "Vikram S. Negi"
 date: 2025-09-27
 description: "Learn the various reasons for using containers on home servers."
 thumbnail: "docker_thumb.png"
+tags: ["dev", "info"]
 ---
 
 Containerization is a process of depolying an application to a machine that is exposed to users via the internet (using ssh). It is a highly recommended practice for running serives on a server. While it is not [necessary](https://www.freecodecamp.org/news/7-cases-when-not-to-use-docker/) to use Docker (tool to achieve containerization) on a server, as we can directly run the service on the base system - there are various advantages to do so.

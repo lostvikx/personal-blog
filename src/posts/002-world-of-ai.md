@@ -4,6 +4,7 @@ author: "Vikram S. Negi"
 date: 2025-03-18
 description: "My thoughts and opinions on people willingly reliquishing control to AI systems around the world."
 thumbnail: "7e24ccc6a763a46c.png"
+tags: ["ai", "internet"]
 ---
 
 Algorithms are precise instructions written to solve a problem. But machine learning algorithms are a different beasts. These data-driven algorithms essentially learn the underlying patterns in the training dataset and predict the outputs, often without explicit programming for every scenario.

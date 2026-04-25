@@ -4,6 +4,7 @@ author: "Vikram S. Negi"
 date: 2025-06-16
 description: "Some insights why dumb-phones are making a comeback in the age of doomscrolling."
 thumbnail: "ffa48cddcb7d24b6.jpg"
+tags: ["tech", "info"]
 ---
 
 Nowadays doom-scrolling and content addictions have become the new normal for a lot of people. An easy way to fix this would be to elimate the suspect in question. Your smartphone.

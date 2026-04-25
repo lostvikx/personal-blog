@@ -1,46 +1,57 @@
-<!DOCTYPE html>
+---
+title: Home
+---
+
+<!doctype html>
 
 <html lang="en">
+    <head>
+        {% include "partials/head.html" %}
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Home - Vikram&apos;s Blog</title>
-    <link href="/css/style.css" rel="stylesheet" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
-</head>
+    <body>
+        {% include "partials/nav.html" %}
 
-<body>
-    <nav>
-        <ul>
-            <li>[ <a href="/">Posts</a> ]</li>
-            <li>[ <a href="/about">About</a> ]</li>
-            <li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>
-        </ul>
-    </nav>
-
-    <main>
-        <section>
-            <h1>Welcome to Vikram&apos;s Blog</h1>
-            <p>Greetings fellow internet user, on this website you might find articles on various subjects like Linux, AI, and other topics that peak my curiosity. You are free to explore this site and get in touch with me using my email.</p>
-        </section>
-        <section>
-            <h2>Blog Posts</h2>
-            <div class="blog-posts">
-                {% for post in collections.posts reversed %}
+        <main>
+            <section>
+                <h1>Welcome to Vikram&apos;s Blog</h1>
+                <p>
+                    Greetings fellow internet user, on this website you might
+                    find articles on various subjects like Linux, AI, and other
+                    topics that peak my curiosity. You are free to explore this
+                    site and get in touch with me using my email.
+                </p>
+            </section>
+            <section>
+                <h2>Blog Posts</h2>
+                <div class="blog-posts">
+                    {% for post in collections.posts reversed %}
                     <div title="{{ post.data.description }}">
                         <time>{{ post.data.date | dateStamp }}</time>
                         <a href="{{ post.url }}">{{ post.data.title }}</a>
                     </div>
-                {% endfor %}
-            </div>
-        </section>
-    </main>
+                    {% endfor %}
+                </div>
+            </section>
+            <section>
+                <h2>Topics</h2>
+                <!--<p>
+                    The following are some topics that have piqued my interest
+                    enough for me to write blog posts about them.
+                </p>-->
+                <div class="tags">
+                    <ul>
+                        {% for tag in collections.tagList %}
+                        <li>
+                            <a href="/tag/{{ tag | slugify }}/">#{{ tag }}</a> -
+                            {{ tagDescriptions[tag] }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+        </main>
 
-    <footer>
-        <hr>
-        <p>Powered by GitHub Pages &#38; Eleventy.</p>
-    </footer>
-</body>
-
+        {% include "partials/footer.html" %}
+    </body>
 </html>

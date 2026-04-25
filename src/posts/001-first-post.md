@@ -4,6 +4,7 @@ author: "Vikram S. Negi"
 date: 2025-03-11
 description: "The first ever blog post on this website."
 thumbnail: "c0b7099fa2677135.webp"
+tags: ["random", "internet"]
 ---
 
 I have been meaning to write something for quite some time now. The hope is to create a blog site that renders markdown files to HTML. To achieve this I decided to use [Eleventy](https://www.11ty.dev) static site generator framework.

@@ -4,8 +4,8 @@ set -euo pipefail
 
 # Description: Creates a new blog post with boilerplate frontmatter.
 # Usage:
-#   ./new-post.sh                -> auto-generates next filename (e.g. 011-new-post.md)
-#   ./new-post.sh custom-name.md -> uses provided filename
+#   ./new-post.sh                 -> auto-generates next filename (e.g. 011-new-post.md)
+#   ./new-post.sh custom-name.md  -> uses provided filename
 
 POSTS_DIR="src/posts"
 ASSETS_DIR="assets"
@@ -42,7 +42,8 @@ title: "Title for Your Epic Blog Post"
 author: "Vikram S. Negi"
 date: "$(date +%F)"
 description: "Add a description for the article."
-thumbnail: "image_720p.webp" # Optional
+thumbnail: "image_720p.webp"  # Optional
+tags: ["tag1", "tag2"]
 ---
 EOF
 

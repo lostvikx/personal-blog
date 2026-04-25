@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include "partials/head.html" %}
+        <meta name="author" content="{{ author }}" />
+        <meta name="description" content="{{ description }}" />
+        <link href="/css/prism.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        {% include "partials/nav.html" %}
+
+        <main>
+            <article>
+                <h1>{{ title }}</h1>
+
+                <p><em>By {{ author }} on {{ date | simpleDate }}</em></p>
+
+                {% if thumbnail %}
+                <div>
+                    <figure class="thumbnail-img">
+                        <img
+                            src="/assets/thumbnails/{{ thumbnail }}"
+                            alt="Blog post thumbnail."
+                        />
+                    </figure>
+                    <hr />
+                </div>
+                {% endif %}
+
+                <div class="content">{{ content | safe }}</div>
+
+                {% if tags %}
+                <p>
+                    <span>Tags:</span>
+                    {% for tag in tags | sortAlphabetically %}
+                    <a href="/tag/{{ tag | slugify }}/">#{{ tag }}</a>
+                    {% endfor %}
+                </p>
+                {% endif %}
+            </article>
+        </main>
+
+        {% include "partials/footer.html" %}
+        <script src="/js/prism.js"></script>
+    </body>
+</html>

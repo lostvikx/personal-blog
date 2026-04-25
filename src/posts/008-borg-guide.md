@@ -3,6 +3,7 @@ title: "How to Create Backups using Borg"
 author: "Vikram S. Negi"
 date: 2025-12-15
 description: "Learn how to use the borg CLI tool to take backups of your system."
+tags: ["linux", "guide"]
 ---
 
 Taking regular backups of your computer system is considered a vital maintenance practice. It is crutial as hardware can fail anytime leading to loss of important personal data. It ensures safety by providing recovery option and peace of mind. A point to note is not how your hardware will fail, but when will it fail.

@@ -3,6 +3,7 @@ title: "How to Flash a USB Stick"
 author: "Vikram S. Negi"
 date: 2026-01-18
 description: "A guide to using command line for flashing a USB stick."
+tags: ["linux", "guide"]
 ---
 
 Flashing an .iso file to a USB stick is an important step in installing operating systems on a modern hardware. This process can be entirely done on the command line, I prefer this method as it is more reliable than using a GUI application. We will be using the `dd` command to accomplish our goal.

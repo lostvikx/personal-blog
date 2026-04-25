@@ -4,6 +4,7 @@ author: "Vikram S. Negi"
 date: 2025-05-02
 description: "A deep dive into understanding how LLMs are trained and used for extracting knowledge."
 thumbnail: "5afc6062d4a42efe.webp"
+tags: ["ai", "info"]
 ---
 
 The following is a summary of the things I learned in a course created by Andrej Karpathy on [YouTube](https://youtu.be/7xTGNNLPyMI). This is by far the most detailed yet easy to follow teachings of how Large Language Models (LLMs) work.
