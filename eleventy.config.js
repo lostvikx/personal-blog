@@ -1,4 +1,5 @@
 import { HtmlBasePlugin } from "@11ty/eleventy";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(HtmlBasePlugin);
@@ -6,9 +7,26 @@ export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setOutputDirectory("dist");
 
-  eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/assets");
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["webp", "gif"],
+    widths: ["auto"],
+
+    sharpOptions: {
+      animated: true,
+    },
+
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+      pictureAttributes: {},
+    },
+  });
 
   // --- Helper Functions ---
 
