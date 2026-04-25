@@ -1,10 +1,50 @@
 {
-  "random": "thoughts that do not fit into a single category.",
-  "internet": "about the online world and internet culture.",
-  "ai": "on artificial intelligence.",
-  "linux": "hacking the operating system.",
-  "guide": "tutorials for various problems that I faced.",
-  "info": "on subject matter of importance.",
-  "tech": "topics involving digital trends.",
-  "dev": "dev logs and other things programming."
+  "random": {
+    "name": "Random",
+    "short": "thoughts that do not fit into a single category.",
+    "gif": "/assets/gifs/tag/random.gif",
+    "long": "A digital junk drawer for my mind. These posts contain shower thoughts and other niche oberservations of about life or society. It includes some personal anecdotes to philosophical reasoning for random things in life."
+  },
+  "internet": {
+    "name": "Internet Culture",
+    "short": "about the online world and internet culture.",
+    "gif": "/assets/gifs/tag/internet.gif",
+    "long": "An exploration of the digital landscape we call our new home. These posts contain online sub-culture and other topics I find online. This is the place where hyper-connected web content is found."
+  },
+  "ai": {
+    "name": "Artificial Intelligence",
+    "short": "on artificial intelligence.",
+    "gif": "/assets/gifs/tag/ai.gif",
+    "long": "Deep dives into the world of machine learning, large language models, and the future of automation. This section focuses on both the technical implementation of AI and the ethical implications of living alongside increasingly intelligent systems."
+  },
+  "linux": {
+    "name": "Linux",
+    "short": "hacking the operating system.",
+    "gif": "/assets/gifs/tag/linux.gif",
+    "long": "Technical deep-dives into the Linux kernel, desktop environments, and the philosophy of Open Source. Whether it's riceing a window manager, automating tasks with bash scripts, or troubleshooting driver issues, this is for those who prefer the terminal."
+  },
+  "guide": {
+    "name": "Guides",
+    "short": "tutorials for various problems that I faced.",
+    "gif": "/assets/gifs/tag/guide.gif",
+    "long": "Practical, step-by-step solutions to specific technical hurdles. These guides serve as a public knowledge base for fixing bugs, configuring hardware, and setting up development environments, documented so I (and you) don't have to solve the same problem twice."
+  },
+  "info": {
+    "name": "Information",
+    "short": "on subject matter of importance.",
+    "gif": "/assets/gifs/tag/info.gif",
+    "long": "Curated research and long-form essays on high-impact topics. This section focuses on digital privacy, data sovereignty, and the critical infrastructure of the modern information age, aimed at providing clarity on complex, essential subjects."
+  },
+  "tech": {
+    "name": "Technology",
+    "short": "topics involving digital trends.",
+    "gif": "/assets/gifs/tag/tech.gif",
+    "long": "Broad-spectrum analysis of the tech industry. From hardware reviews and gadget breakdowns to the latest shifts in consumer electronics, this section tracks how emerging technology is being built and consumed by the masses."
+  },
+  "dev": {
+    "name": "Development",
+    "short": "dev logs and other things programming.",
+    "gif": "/assets/gifs/tag/dev.gif",
+    "long": "A behind-the-scenes look at the software engineering process. This includes dev logs for my personal projects, breakdowns of specific code snippets, explorations of new frameworks, and reflections on the craft of writing clean, maintainable code."
+  }
 }

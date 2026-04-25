@@ -14,6 +14,7 @@
 
 .gif-block {
     display: flex;
+    /*flex-direction: row-reverse;*/
     align-items: center;
     gap: 1.5rem;
     align-items: flex-start;
@@ -21,9 +22,23 @@
 }
 
 .gif-block img {
-    max-width: 200px;
+    display: block;
+    /*2.0rem -> 30px
+    1.5rem -> 22.5*/
+    /*max-width: 333.75px;*/
+    max-width: calc((720px - 30px - 22.5px) / 2);
+    height: auto;
+    /*aspect-ratio: 16/9;*/
+    object-fit: cover;
+}
+
+.tag-gif {
+    margin: 0 auto 1.5rem auto;
+    max-width: 100% !important;
     height: auto;
     display: block;
+    aspect-ratio: 16/10;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 700px) {

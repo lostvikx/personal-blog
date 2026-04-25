@@ -39,7 +39,8 @@ pre > code {
 code {
     font-family: monospace !important;
     background-color: var(--code-block-color) !important;
-    color: var(--text-color) !important;
+    /*color: var(--text-secondary) !important;*/
+    color: var(--accent-color) !important;
     padding: 0.2em 0.4em !important;
     font-size: 0.9rem !important;
     font-weight: 400 !important;

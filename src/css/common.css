@@ -1,4 +1,4 @@
-/*@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap");
 
 /*:root {
     --bg-color: #1e1e1e;
@@ -19,7 +19,8 @@
     --code-block-color: #2a2238; /* dark violet */
     --link-color: #7dcfff; /* crystal blue */
     --visited-link-color: #d8a8ff;
-    --font-family: sans-serif;
+    --text-font: "Open Sans", sans-serif;
+    --header-font: "Roboto Slab", serif;
 }
 
 * {
@@ -30,8 +31,8 @@
 
 body {
     /*font-family: "Open Sans", sans-serif;*/
-    font-family: var(--font-family);
-    font-display: fallback;
+    font-family: var(--text-font);
+    font-display: swap;
     line-height: 1.65;
     margin: 0;
     padding: 0;
@@ -74,6 +75,7 @@ h1,
 h2,
 h3 {
     line-height: 1.5;
+    font-family: var(--header-font);
 }
 
 h2,
@@ -107,6 +109,7 @@ nav {
     background: var(--bg-color);
     padding: 0.5em 0;
     text-align: center;
+    /*font-family: monospace;*/
 }
 
 nav ul {

@@ -68,7 +68,7 @@ title: Home
                         {% for tag in collections.tagList %}
                         <li>
                             <a href="/tag/{{ tag | slugify }}/">#{{ tag }}</a> -
-                            {{ tagDescriptions[tag] }}
+                            {{ tagDescriptions[tag].short }}
                         </li>
                         {% endfor %}
                     </ul>

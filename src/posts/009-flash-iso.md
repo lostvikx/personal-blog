@@ -8,13 +8,13 @@ tags: ["linux", "guide"]
 
 Flashing an .iso file to a USB stick is an important step in installing operating systems on a modern hardware. This process can be entirely done on the command line, I prefer this method as it is more reliable than using a GUI application. We will be using the `dd` command to accomplish our goal.
 
-> **Warning**: `dd` is a powerful and dangerous command. If you specify the wrong output device, you can permanently erase data on your main drive.
+> **Warning:** `dd` is a powerful and dangerous command. If you specify the wrong output device, you can permanently erase data on your main drive.
 
 ## Identify USB Device
 
-First step is to know the correct name for your USB stick (`/dev/sdb`). Note that we need to format the whole device and not a partition.
+First step is to know the correct name for your USB stick (e.g. `/dev/sdb`). Next we must understand that we need to format the whole device and not just a partition.
 
-List block devices plugging in your USB:
+List all the block devices:
 
 ```bash
 lsblk
@@ -22,7 +22,7 @@ lsblk
 sudo fdisk -l
 ```
 
-Find your USB stick. It will usually be named something like `/dev/sdb`. Pay attention to its size to confirm it's your USB drive.
+Find your USB stick. It will usually be named something like `/dev/sdb`. Pay attention to its size to confirm it is your USB drive and not some other disk.
 
 > **Note:** From this point forward, replace `/dev/sdX` in the commands with your actual device.
 
@@ -38,27 +38,17 @@ sudo umount /dev/sdX2
 # ... and so on for any other partitions
 ```
 
-If `umount` complains the device is busy, make sure no file manager, terminal, or other application is accessing it. Sometimes simply closing the file manager window showing the USB contents is enough.
+If `umount` complains the device is busy, make sure no file manager, terminal, or other application is accessing it. Sometimes simply closing the file manager window showing the USB contents is enough to unmount it.
 
 ## Flash the ISO
 
-Now, execute the `dd` command. Here is an example of how to flash your USB with an `.iso` file.
+Now, execute the `dd` command. Here is an example of how to flash your USB stick with an `.iso` file.
 
 ```bash
 sudo dd if=/path/to/image.iso of=/dev/sdX bs=4M status=progress conv=fsync
 ```
 
-Command breakdown:
-
-- `sudo`: root privileges, this is required for writing directly to a device.
-- `dd`: command line utility for copying files.
-- `if=/path/to/image.iso`: `if` stands for "input file".
-- `of=/dev/sdX`: `of` stands for "output file".
-- `bs=4M`: `bs` stands for "block size".
-- `status=progress`: shows the progress of the operation.
-- `conv=fsync`: written data is immediately synced to the disk, preventing data loss if system crashes or drive is removed prematurely.
-
-Enter your password if prompted. The process can take several minutes depending on the size of the ISO and the write speed of your USB stick.
+The process can take several minutes depending on the size of the ISO and the write speed of your USB stick.
 
 ## Synchronize Data to Disk
 
