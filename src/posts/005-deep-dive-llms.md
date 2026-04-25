@@ -19,7 +19,7 @@ Points to note about the text dataset:
 - High quality - reputable sources.
 - High diversity - larger knowledge base for model.
 
-![FineWeb Pipeline: Getting the text data for LLMs.](/assets/deep-dive-llms/fineweb.png)
+![FineWeb Pipeline: Getting the text data for LLMs.](/assets/imgs/deep-dive-llms/fineweb.png)
 
 To find more information about pre-training, please check out the FineWeb [docs](https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1).
 
@@ -40,7 +40,7 @@ Here is an example of tokenization process shared in the lecture:
 3. Use byte-pair encoding algorithm (each pair becomes a new token)
 4. The previous step can be repeated (this gives us a shorter sequence of string with a larger vocabulary)
 
-![Example of tokenization.](/assets/deep-dive-llms/tiktokenizer_example.png)
+![Example of tokenization.](/assets/imgs/deep-dive-llms/tiktokenizer_example.png)
 
 > **Note:** Current LLMs typically use vocabulary of ~100,000 tokens.
 
@@ -52,7 +52,7 @@ The input to the network can be of variable length from 0 to max context window.
 
 Training a neural network means to update the probability distribution to conform to the training data. In every iteration of training, we update the probabilities of the distribution of the possible tokens (~100,000 tokens). We are trying to nudge the model to guess the next output token.
 
-![Diagram of a neural network I/O.](/assets/deep-dive-llms/llm_io.png)
+![Diagram of a neural network I/O.](/assets/imgs/deep-dive-llms/llm_io.png)
 
 ## Neural Network Internals
 
@@ -68,7 +68,7 @@ Given some input tokens, the model samples a token from the output probability d
 
 These systems are stochastic or probabilistic in nature and therefore their outputs are unpredictation and random. After repeating the next token prediction till some point, the output string can be thought as remixes or the original training data or being inspired by it.
 
-![An example of model inference.](/assets/deep-dive-llms/llm_inference.png)
+![An example of model inference.](/assets/imgs/deep-dive-llms/llm_inference.png)
 
 ## Base Model
 
