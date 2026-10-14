@@ -20,7 +20,8 @@
         <nav>
     <ul>
         <li>[ <a href="/personal-blog/">Home</a> ]</li>
-        <li>[ <a href="/personal-blog/tag/posts/">Posts</a> ]</li>
+        <!--<li>[ <a href="/tag/posts/">Posts</a> ]</li>-->
+        <li>[ <a href="/personal-blog/posts/">Posts</a> ]</li>
         <li>[ <a href="/personal-blog/about/">About</a> ]</li>
         <!--<li>[ <a href="mailto:vikram.s.negi@proton.me">Email</a> ]</li>-->
     </ul>
@@ -59,6 +60,12 @@ sudo umount /dev/sdX2
 </code></pre>
 <p>If <code>umount</code> complains the device is busy, make sure no file manager, terminal, or other application is accessing it. Sometimes simply closing the file manager window showing the USB contents is enough to unmount it.</p>
 <h2>Flash the ISO</h2>
+<p>Before flashing the USB, we need to verify the integrity of the .iso file. To do that download a checksum file, usually available in the downloads page of the distro website, and perform the following:</p>
+<pre><code class="language-bash">sha256sum -c checksum.sha256
+</code></pre>
+<blockquote>
+<p>Note: Make sure that the .iso file is located in the same directory as the checksum file.</p>
+</blockquote>
 <p>Now, execute the <code>dd</code> command. Here is an example of how to flash your USB stick with an <code>.iso</code> file.</p>
 <pre><code class="language-bash">sudo dd if=/path/to/image.iso of=/dev/sdX bs=4M status=progress conv=fsync
 </code></pre>

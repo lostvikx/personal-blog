@@ -36,7 +36,8 @@
 .tag-gif {
     margin: 0 auto 1.5rem auto;
     /*max-width: 100%;*/
-    width: 480px;
+    /*width: 480px;*/
+    width: 50%;
     height: auto;
     display: block;
     aspect-ratio: 16/10;
