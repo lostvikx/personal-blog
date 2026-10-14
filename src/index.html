@@ -58,22 +58,6 @@ title: Home
                     </ul>
                 </div>
             </section>
-            <section>
-                <h2>Blog Posts</h2>
-                <p>Posts ordered in recency order of creation.</p>
-                <div class="blog-posts">
-                    {% for post in collections.posts reversed %}
-                    <div>
-                        <time>{{ post.data.date | dateStamp }}</time>
-                        <a
-                            href="{{ post.url }}"
-                            title="{{ post.data.description }}"
-                            >{{ post.data.title }}</a
-                        >
-                    </div>
-                    {% endfor %}
-                </div>
-            </section>
         </main>
 
         {% include "partials/footer.html" %}

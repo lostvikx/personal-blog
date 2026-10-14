@@ -42,6 +42,14 @@ If `umount` complains the device is busy, make sure no file manager, terminal, o
 
 ## Flash the ISO
 
+Before flashing the USB, we need to verify the integrity of the .iso file. To do that download a checksum file, usually available in the downloads page of the distro website, and perform the following:
+
+```bash
+sha256sum -c checksum.sha256
+```
+
+> Note: Make sure that the .iso file is located in the same directory as the checksum file.
+
 Now, execute the `dd` command. Here is an example of how to flash your USB stick with an `.iso` file.
 
 ```bash

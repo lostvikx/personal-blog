@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap");
 
 /*:root {
     --bg-color: #1e1e1e;
@@ -19,6 +19,7 @@
     --code-block-color: #2a2238; /* dark violet */
     --link-color: #7dcfff; /* crystal blue */
     --visited-link-color: #d8a8ff;
+    /*--text-font: "Lora", serif;*/
     --text-font: "Open Sans", sans-serif;
     --header-font: "Roboto Slab", serif;
 }
